@@ -1,0 +1,21 @@
+arch:
+  - armhf
+  - armv7
+  - aarch64
+  - amd64
+  - i386
+description: "MQTT-gateway for SAIC cars like MG5, ZS EV or Marvel R"
+name: "SAIC MQTT Gateway (Java)"
+image: "saicismartapi/saic-java-mqtt-gateway"
+url: "https://github.com/SAIC-iSmart-API/saic-home-assistant-addon"
+slug: "saic_java_mqtt_gateway"
+stage: "stable"
+version: "0.2.0"
+options:
+  config: "/config/saic-mqtt-gateway.toml"
+schema:
+  config: "str"
+init: false
+#map: 
+#  - config:ro
+host_network: true
