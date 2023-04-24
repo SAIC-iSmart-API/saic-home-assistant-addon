@@ -1,0 +1,4 @@
+# https://developers.home-assistant.io/docs/add-ons/repository#repository-configuration
+name: SAIC iSmart API Home Assistant Add-on
+url: 'https://github.com/SAIC-iSmart-API/saic-home-assistant-addon'
+maintainer: Tonno87
