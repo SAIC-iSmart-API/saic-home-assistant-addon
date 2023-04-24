@@ -1,0 +1,34 @@
+arch:
+  - armhf
+  - armv7
+  - aarch64
+  - amd64
+  - i386
+description: "MQTT-gateway for SAIC cars like MG5, ZS EV or Marvel R"
+name: "SAIC MQTT Gateway (Python)"
+image: "saicismartapi/saic-python-mqtt-gateway"
+url: "https://github.com/SAIC-iSmart-API/saic-home-assistant-addon"
+slug: "saic_python_mqtt_gateway"
+stage: "dev"
+version: "latest"
+legacy: true
+options:
+  MQTT_URI: "tcp://localhost:1883"
+  MQTT_USER: ?
+  MQTT_PASSWORD: ?
+  MQTT_TOPIC: ?
+  SAIC_USER: null
+  SAIC_PASSWORD: null
+  ABRP_USER_TOKEN: ?
+  OPENWB_LP_MAP: ?
+schema:
+  MQTT_URI: str
+  MQTT_USER: str
+  MQTT_PASSWORD: password
+  MQTT_TOPIC: str
+  SAIC_USER: str
+  SAIC_PASSWORD: password
+  ABRP_USER_TOKEN: str
+  OPENWB_LP_MAP: ?
+init: false
+host_network: true
