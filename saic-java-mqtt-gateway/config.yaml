@@ -11,11 +11,18 @@ url: "https://github.com/SAIC-iSmart-API/saic-home-assistant-addon"
 slug: "saic_java_mqtt_gateway"
 stage: "stable"
 version: "0.2.0"
+legacy: true
 options:
-  config: "/config/saic-mqtt-gateway.toml"
+  MQTT_URI: "tcp://localhost:1883"
+  MQTT_USER: null
+  MQTT_PASSWORD: null
+  SAIC_USER: null
+  SAIC_PASSWORD: null
 schema:
-  config: "str"
+  MQTT_URI: str
+  MQTT_USER: str
+  MQTT_PASSWORD: password
+  SAIC_USER: str
+  SAIC_PASSWORD: password
 init: false
-#map: 
-#  - config:ro
 host_network: true
