@@ -1,9 +1,6 @@
 arch:
-  - armhf
-  - armv7
   - aarch64
   - amd64
-  - i386
 description: "MQTT-Gateway for SAIC cars like MG5, ZS EV or Marvel R"
 name: "SAIC MQTT Gateway (Python)"
 image: "saicismartapi/saic-python-mqtt-gateway"
@@ -13,28 +10,24 @@ stage: "experimental"
 version: "latest"
 legacy: true
 options:
-  MQTT:
-    MQTT_URI: "tcp://localhost:1883"
-    MQTT_USER: ""
-    MQTT_PASSWORD: ""
-    MQTT_TOPIC: ""
-  SAIC:
-    SAIC_USER: null
-    SAIC_PASSWORD: null
-  ABRP:  
-    ABRP_USER_TOKEN: ""
-    OPENWB_LP_MAP: ""
+  MQTT_URI: "tcp://localhost:1883"
+  MQTT_USER: ""
+  MQTT_PASSWORD: ""
+  MQTT_TOPIC: ""
+  SAIC_USER: null
+  SAIC_PASSWORD: null
+  ABRP_API_KEY: ""
+  ABRP_USER_TOKEN: ""
+  OPENWB_LP_MAP: ""
 schema:
-  MQTT:
-    MQTT_URI: str
-    MQTT_USER: str?
-    MQTT_PASSWORD: password?
-    MQTT_TOPIC: str?
-  SAIC:
-    SAIC_USER: str
-    SAIC_PASSWORD: password
-  ABRP:
-    ABRP_USER_TOKEN: str?
-    OPENWB_LP_MAP: str?
+  MQTT_URI: str
+  MQTT_USER: str?
+  MQTT_PASSWORD: password?
+  MQTT_TOPIC: str?
+  SAIC_USER: str
+  SAIC_PASSWORD: password
+  ABRP_API_KEY: str?
+  ABRP_USER_TOKEN: str?
+  OPENWB_LP_MAP: str?
 init: false
 host_network: true
