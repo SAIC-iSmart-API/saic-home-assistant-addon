@@ -14,7 +14,7 @@ The implementation is based on the findings from the [SAIC-iSmart-API Documentat
 ## Configuration
 
 Following parameters are available via options tab:
-
+```
 | Option          | Description                                                                                                                              |
 |-----------------|------------------------------------------------------------------------------------------------------------------------------------------|
 | MQTT_URI        | URI to the MQTT Server. TCP: tcp://mqtt.eclipseprojects.io:1883 or WebSocket: ws://mqtt.eclipseprojects.io:9001 - **required**           |
@@ -27,6 +27,7 @@ Following parameters are available via options tab:
 | ABRP_USER_TOKEN | Mapping of VIN to ABRP User Token. Multiple mappings can be provided seperated by ',' Example: LSJXXXX=12345-abcdef,LSJYYYY=67890-ghijkl |      
 | OPENWB_LP_MAP   | Mapping of VIN to openWB charging point. Multiple mappings can be provided seperated by ',' Example: 1=LSJXXXX,2=LSJYYYY                 |
 
+```
 ## openWB integration
 
 The state-of-charge (SoC) can be provided over MQTT to an [openWB wallbox](https://openwb.de). To activate this, you need to provide the Mapping of VIN to openWB charging point. With this information the gateway can also detect that the vehicle is charging.
