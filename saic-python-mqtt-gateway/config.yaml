@@ -16,6 +16,7 @@ options:
   MQTT_TOPIC: ""
   SAIC_USER: null
   SAIC_PASSWORD: null
+  SAIC_URI: ""
   ABRP_API_KEY: ""
   ABRP_USER_TOKEN: ""
   OPENWB_LP_MAP: ""
@@ -26,6 +27,7 @@ schema:
   MQTT_TOPIC: str?
   SAIC_USER: str
   SAIC_PASSWORD: password
+  SAIC_URI: str?
   ABRP_API_KEY: str?
   ABRP_USER_TOKEN: str?
   OPENWB_LP_MAP: str?
