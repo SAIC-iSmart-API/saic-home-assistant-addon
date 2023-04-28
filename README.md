@@ -1,7 +1,7 @@
 # saic-home-assistant-addon
 SAIC-iSmart-API repository for Home Assistant OS (HASS.IO)
 
-### !!Attention: These addons are build for european users!!
+### !!Attention: These addons are build for european users. Change your URI with the SAIC_URI option!!
 
 # Installation
 
