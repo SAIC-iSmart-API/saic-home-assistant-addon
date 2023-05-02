@@ -6,8 +6,8 @@ name: "SAIC MQTT Gateway (Python)"
 image: "saicismartapi/saic-python-mqtt-gateway"
 url: "https://github.com/SAIC-iSmart-API/saic-home-assistant-addon"
 slug: "saic_python_mqtt_gateway"
-stage: "experimental"
-version: "0.2.0"
+stage: "stable"
+version: "0.2.1"
 legacy: true
 options:
   MQTT_URI: "tcp://localhost:1883"
