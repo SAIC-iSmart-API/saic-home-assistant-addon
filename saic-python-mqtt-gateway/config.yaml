@@ -13,7 +13,7 @@ options:
   MQTT_URI: "tcp://localhost:1883"
   MQTT_USER: ""
   MQTT_PASSWORD: ""
-  MQTT_TOPIC: ""
+  MQTT_TOPIC: "saic"
   SAIC_USER: null
   SAIC_PASSWORD: null
   SAIC_URI: "https://tap-eu.soimt.com"
