@@ -1,5 +1,32 @@
 # SAIC MQTT Gateway (Python)
 
+## 0.2.3
+
+### Added
+
+* Using new saic-ismart-client (version 1.3.0)
+* Feature: transmit ABRP data even if we have no GPS data
+
+### Fixed
+
+* empty environment variables are ignored
+* Driving detection fixed
+
+## 0.2.2
+
+Vehicle control commands are finally working
+
+### Added
+
+* Turn front window defroster heating on or off
+* Turn A/C on or off
+* Configurable re-login delay
+* Using new saic-ismart-client (version 1.2.6)
+* Environment variable to configure log level
+
+### Fixed
+* environment variable overwrites the predefined default value
+
 ## 0.2.1
 
 ### Added
