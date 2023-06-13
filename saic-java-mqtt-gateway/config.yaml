@@ -18,9 +18,9 @@ options:
   MQTT_PASSWORD: null
   SAIC_USER: null
   SAIC_PASSWORD: null
-  SAIC_URI: ""
-  ABRP_API_KEY: ""
-  ABRP_USER_TOKEN: ""
+  SAIC_URI: "https://tap-eu.soimt.com"
+  ABRP_API_KEY: "8cfc314b-03cd-4efe-ab7d-4431cd8f2e2d"
+  ABRP_USER_TOKEN: "vin1 = token1"
 schema:
   MQTT_URI: str
   MQTT_USER: str
