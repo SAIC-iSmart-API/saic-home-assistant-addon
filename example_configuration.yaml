@@ -1,0 +1,322 @@
+# This can be added to your configuration.yaml file
+# Tested on MG ZS EV 2022 (comfort)
+
+mqtt:
+  climate:
+      
+    # Issues
+    # - Temperature cannot be set
+    # - State is not returned (remoteClimateState is 'unknown')
+    - name: MG Climate
+      unique_id: LSxxxxxxxxxxxxx_mg_climate
+      precision: 1.0
+      temperature_unit: "C"
+      mode_command_topic: "saic/...@gmail.com/vehicles/LSxxxxxxxxxxxxx/climate/remoteClimateState/set"
+      mode_state_topic: "saic/...@gmail.com/vehicles/LSxxxxxxxxxxxxx/climate/remoteClimateState"
+      mode_command_template: >-
+        {% if value == "auto" %}
+          on
+        {% else  %}
+          off
+        {% endif %}
+      mode_state_template: >- 
+        {% if value == "on" %}
+          auto
+        {% else %}
+          off
+        {% endif %}
+      modes:
+        - "off"
+        - "auto"
+      current_temperature_topic: "saic/...@gmail.com/vehicles/LSxxxxxxxxxxxxx/climate/interiorTemperature"
+      current_temperature_template: "{{ value }}"
+      temperature_command_topic: "saic/...@gmail.com/vehicles/LSxxxxxxxxxxxxx/climate/remoteTemperature/set"
+      temperature_state_template: "{{ value | int }}"
+
+  switch:
+    
+    # Issues:
+    # - Toggle does nothing  
+    - name: MG charging
+      unique_id: LSxxxxxxxxxxxxx_mg_charging_set
+      state_topic: "saic/...@gmail.com/vehicles/LSxxxxxxxxxxxxx/drivetrain/charging"
+      command_topic: "saic/...@gmail.com/vehicles/LSxxxxxxxxxxxxx/drivetrain/charging/set"
+      payload_on: "True"
+      payload_off: "False"
+      optimistic: false
+      qos: 0
+      
+    # Issues:
+    # - Toggle does nothing
+    # - State is not clear, state is on/off randomly
+    # - Would be nice if this can be `device_class: window`, but not possible with Switch entity
+    - name: MG window driver 
+      unique_id: LSxxxxxxxxxxxxx_mg_window_driver
+      state_topic: "saic/...@gmail.com/vehicles/LSxxxxxxxxxxxxx/windows/driver"
+      command_topic: "saic/...@gmail.com/vehicles/LSxxxxxxxxxxxxx/windows/driver/set"
+      payload_on: "True"
+      payload_off: "False"
+      optimistic: false
+      qos: 0
+    
+    # Issues: See above
+    - name: MG window passenger 
+      unique_id: LSxxxxxxxxxxxxx_mg_window_passenger
+      state_topic: "saic/...@gmail.com/vehicles/LSxxxxxxxxxxxxx/windows/passenger"
+      command_topic: "saic/...@gmail.com/vehicles/LSxxxxxxxxxxxxx/windows/passenger/set"
+      payload_on: "True"
+      payload_off: "False"
+      optimistic: false
+      qos: 0
+      
+    # Issues: See above
+    - name: MG window rearLeft 
+      unique_id: LSxxxxxxxxxxxxx_mg_window_rearLeft
+      state_topic: "saic/...@gmail.com/vehicles/LSxxxxxxxxxxxxx/windows/rearLeft"
+      command_topic: "saic/...@gmail.com/vehicles/LSxxxxxxxxxxxxx/windows/rearLeft/set"
+      payload_on: "True"
+      payload_off: "False"
+      optimistic: false
+      qos: 0
+      
+    # Issues: See above
+    - name: MG window rearRight 
+      unique_id: LSxxxxxxxxxxxxx_mg_window_rearRight
+      state_topic: "saic/...@gmail.com/vehicles/LSxxxxxxxxxxxxx/windows/rearRight"
+      command_topic: "saic/...@gmail.com/vehicles/LSxxxxxxxxxxxxx/windows/rearRight/set"
+      payload_on: "True"
+      payload_off: "False"
+      optimistic: false
+      qos: 0
+      
+  lock:
+    - unique_id: LSxxxxxxxxxxxxx_mg_doors
+      name: MG Lock
+      state_topic: "saic/...@gmail.com/vehicles/LSxxxxxxxxxxxxx/doors/locked"
+      command_topic: "saic/...@gmail.com/vehicles/LSxxxxxxxxxxxxx/doors/locked/set"
+      payload_lock: "True"
+      payload_unlock: "False"
+      state_locked: "True"
+      state_unlocked: "False"
+      optimistic: false
+      qos: 0
+
+  sensor:
+    - name: MG state of charge
+      unique_id: LSxxxxxxxxxxxxx_mg_soc
+      state_topic: "saic/...@gmail.com/vehicles/LSxxxxxxxxxxxxx/drivetrain/soc"
+      value_template: "{{ value }}"
+      device_class: battery
+      state_class: measurement
+      unit_of_measurement: "%"
+      
+    - name: MG milage 
+      unique_id: LSxxxxxxxxxxxxx_mg_mileage
+      state_topic: "saic/...@gmail.com/vehicles/LSxxxxxxxxxxxxx/drivetrain/mileage"
+      value_template: "{{ value }}"
+      device_class: distance
+      state_class: total_increasing
+      unit_of_measurement: "km"
+      
+    # Issues:
+    # - Returns a number, (got 3 and 6), not sure how to map
+    - name: MG chargingType
+      unique_id: LSxxxxxxxxxxxxx_mg_chargingType
+      state_topic: "saic/...@gmail.com/vehicles/LSxxxxxxxxxxxxx/drivetrain/chargingType"
+      value_template: "{{ value }}"
+      
+    - name: MG auxiliaryBatteryVoltage
+      unique_id: LSxxxxxxxxxxxxx_mg_auxiliaryBatteryVoltage
+      state_topic: "saic/...@gmail.com/vehicles/LSxxxxxxxxxxxxx/drivetrain/auxiliaryBatteryVoltage"
+      value_template: "{{ value }}"
+      device_class: voltage
+      state_class: measurement
+      unit_of_measurement: "V"
+      
+    - name: MG range
+      unique_id: LSxxxxxxxxxxxxx_mg_range
+      state_topic: "saic/...@gmail.com/vehicles/LSxxxxxxxxxxxxx/drivetrain/range"
+      value_template: "{{ value }}"
+      device_class: distance
+      unit_of_measurement: "km"
+      
+    - name: MG current
+      unique_id: LSxxxxxxxxxxxxx_mg_current
+      state_topic: "saic/...@gmail.com/vehicles/LSxxxxxxxxxxxxx/drivetrain/current"
+      value_template: "{{ value }}"
+      device_class: current
+      state_class: measurement
+      unit_of_measurement: "A"
+      
+    - name: MG voltage
+      unique_id: LSxxxxxxxxxxxxx_mg_voltage
+      state_topic: "saic/...@gmail.com/vehicles/LSxxxxxxxxxxxxx/drivetrain/voltage"
+      value_template: "{{ value }}"
+      device_class: voltage
+      state_class: measurement
+      unit_of_measurement: "V"
+      
+    - name: MG power
+      unique_id: LSxxxxxxxxxxxxx_mg_power
+      state_topic: "saic/...@gmail.com/vehicles/LSxxxxxxxxxxxxx/drivetrain/power"
+      value_template: "{{ value }}"
+      device_class: power
+      state_class: measurement
+      unit_of_measurement: "kW"
+      
+    - name: MG interiorTemperature 
+      unique_id: LSxxxxxxxxxxxxx_mg_interiorTemperature
+      state_topic: "saic/...@gmail.com/vehicles/LSxxxxxxxxxxxxx/climate/interiorTemperature"
+      value_template: "{{ value }}"
+      device_class: temperature
+      state_class: measurement
+      unit_of_measurement: "°C"
+      
+    - name: MG exteriorTemperature 
+      unique_id: LSxxxxxxxxxxxxx_mg_exteriorTemperature
+      state_topic: "saic/...@gmail.com/vehicles/LSxxxxxxxxxxxxx/climate/exteriorTemperature"
+      value_template: "{{ value }}"
+      device_class: temperature
+      state_class: measurement
+      unit_of_measurement: "°C"
+      
+    # Issues:
+    # - Got a number (got 0 and 2), not sure how to map
+    - name: MG remoteClimateState 
+      unique_id: LSxxxxxxxxxxxxx_mg_remoteClimateState
+      state_topic: "saic/...@gmail.com/vehicles/LSxxxxxxxxxxxxx/climate/remoteClimateState"
+      value_template: "{{ value }}"
+      
+    # Issues:
+    # - State is 'unknown'
+    - name: MG backWindowHeat 
+      unique_id: LSxxxxxxxxxxxxx_mg_backWindowHeat
+      state_topic: "saic/...@gmail.com/vehicles/LSxxxxxxxxxxxxx/climate/backWindowHeat"
+      value_template: "{{ value }}"
+      
+    # Issues:
+    # - State is 'unknown'
+    - name: MG location position 
+      unique_id: LSxxxxxxxxxxxxx_mg_location_position
+      state_topic: "saic/...@gmail.com/vehicles/LSxxxxxxxxxxxxx/location/position"
+      value_template: "{{ value_json.latitude }},{{ value_json.longitude }}"
+      
+    - name: MG location heading 
+      unique_id: LSxxxxxxxxxxxxx_mg_location_heading
+      state_topic: "saic/...@gmail.com/vehicles/LSxxxxxxxxxxxxx/location/heading"
+      value_template: "{{ value }}"
+    
+    - name: MG location speed 
+      unique_id: LSxxxxxxxxxxxxx_mg_location_speed
+      state_topic: "saic/...@gmail.com/vehicles/LSxxxxxxxxxxxxx/location/speed"
+      value_template: "{{ value }}"
+      device_class: speed
+      unit_of_measurement: "km/h"
+      
+    - name: MG tyres frontLeftPressure 
+      unique_id: LSxxxxxxxxxxxxx_mg_location_frontLeftPressure
+      state_topic: "saic/...@gmail.com/vehicles/LSxxxxxxxxxxxxx/tyres/frontLeftPressure"
+      value_template: "{{ value }}"
+      device_class: pressure
+      unit_of_measurement: "bar"
+      
+    - name: MG tyres frontRightPressure 
+      unique_id: LSxxxxxxxxxxxxx_mg_tyres_frontRightPressure
+      state_topic: "saic/...@gmail.com/vehicles/LSxxxxxxxxxxxxx/tyres/frontRightPressure"
+      value_template: "{{ value }}"
+      device_class: pressure
+      unit_of_measurement: "bar"
+      
+    - name: MG tyres rearLeftPressure 
+      unique_id: LSxxxxxxxxxxxxx_mg_tyres_rearLeftPressure
+      state_topic: "saic/...@gmail.com/vehicles/LSxxxxxxxxxxxxx/tyres/rearLeftPressure"
+      value_template: "{{ value }}"
+      device_class: pressure
+      unit_of_measurement: "bar"
+      
+    - name: MG tyres rearRightPressure 
+      unique_id: LSxxxxxxxxxxxxx_mg_tyres_rearRightPressure
+      state_topic: "saic/...@gmail.com/vehicles/LSxxxxxxxxxxxxx/tyres/rearRightPressure"
+      value_template: "{{ value }}"
+      device_class: pressure
+      unit_of_measurement: "bar"
+      
+  binary_sensor:      
+    - name: MG chargerConnected
+      unique_id: LSxxxxxxxxxxxxx_mg_chargerConnected
+      state_topic: "saic/...@gmail.com/vehicles/LSxxxxxxxxxxxxx/drivetrain/chargerConnected"
+      payload_on: "True"
+      payload_off: "False"
+      device_class: plug
+      
+    - name: MG running
+      unique_id: LSxxxxxxxxxxxxx_mg_running
+      state_topic: "saic/...@gmail.com/vehicles/LSxxxxxxxxxxxxx/drivetrain/running"
+      payload_on: "True"
+      payload_off: "False"
+      device_class: running
+
+    - name: MG charging
+      unique_id: LSxxxxxxxxxxxxx_mg_charging
+      state_topic: "saic/...@gmail.com/vehicles/LSxxxxxxxxxxxxx/drivetrain/charging"
+      payload_on: "True"
+      payload_off: "False"
+      device_class: battery_charging
+      
+    - name: MG door driver 
+      unique_id: LSxxxxxxxxxxxxx_mg_door_driver
+      state_topic: "saic/...@gmail.com/vehicles/LSxxxxxxxxxxxxx/doors/driver"
+      payload_on: "True"
+      payload_off: "False"
+      device_class: door
+      
+    - name: MG door passenger 
+      unique_id: LSxxxxxxxxxxxxx_mg_door_passenger
+      state_topic: "saic/...@gmail.com/vehicles/LSxxxxxxxxxxxxx/doors/passenger"
+      payload_on: "True"
+      payload_off: "False"
+      device_class: door
+      
+    - name: MG door rearLeft 
+      unique_id: LSxxxxxxxxxxxxx_mg_door_rearLeft
+      state_topic: "saic/...@gmail.com/vehicles/LSxxxxxxxxxxxxx/doors/rearLeft"
+      payload_on: "True"
+      payload_off: "False"
+      device_class: door
+      
+    - name: MG door rearRight 
+      unique_id: LSxxxxxxxxxxxxx_mg_door_rearRight
+      state_topic: "saic/...@gmail.com/vehicles/LSxxxxxxxxxxxxx/doors/rearRight"
+      payload_on: "True"
+      payload_off: "False"
+      device_class: door
+      
+    - name: MG door bonnet 
+      unique_id: LSxxxxxxxxxxxxx_mg_door_bonnet
+      state_topic: "saic/...@gmail.com/vehicles/LSxxxxxxxxxxxxx/doors/bonnet"
+      payload_on: "True"
+      payload_off: "False"
+      device_class: door
+      
+    - name: MG door boot 
+      unique_id: LSxxxxxxxxxxxxx_mg_door_boot
+      state_topic: "saic/...@gmail.com/vehicles/LSxxxxxxxxxxxxx/doors/boot"
+      payload_on: "True"
+      payload_off: "False"
+      device_class: door
+      
+    - name: MG light mainBeam 
+      unique_id: LSxxxxxxxxxxxxx_mg_light_mainBeam
+      state_topic: "saic/...@gmail.com/vehicles/LSxxxxxxxxxxxxx/lights/mainBeam"
+      value_template: "{{ value }}"
+      payload_on: "True"
+      payload_off: "False"
+      device_class: light
+      
+    - name: MG light dippedBeam 
+      unique_id: LSxxxxxxxxxxxxx_mg_light_dippedBeam
+      state_topic: "saic/...@gmail.com/vehicles/LSxxxxxxxxxxxxx/lights/dippedBeam"
+      value_template: "{{ value }}"
+      payload_on: "True"
+      payload_off: "False"
+      device_class: light
