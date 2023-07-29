@@ -1,5 +1,27 @@
 # SAIC MQTT Gateway (Python)
 
+## 0.3.0
+
+### Added
+
+* Keep polling for a configurable amount of time after the vehicle has been shutdown
+* Battery (SoC) target load
+* Start/Stop charging
+* Enhanced A/C control
+* Turn off message requests when refresh mode is off
+* Home Assistant auto-discovery
+
+### Fixed
+
+* Vehicle and charging status updates stop after a while
+* Inconsistent topic name for battery management data (BMS) removed
+
+## 0.2.4
+
+### Added
+
+* docker support for architecture linux/arm/v7
+
 ## 0.2.3
 
 ### Added
