@@ -1,6 +1,7 @@
 arch:
   - aarch64
   - amd64
+  - armv7
 description: "MQTT-Gateway for SAIC cars like MG5, ZS EV or Marvel R"
 name: "SAIC MQTT Gateway (Python)"
 image: "saicismartapi/saic-python-mqtt-gateway"
@@ -21,8 +22,8 @@ options:
   ABRP_USER_TOKEN: ""
   OPENWB_LP_MAP: ""
   LOG_LEVEL: "INFO"
-  SAIC_RELOGIN_DELAY: ""
-  HA_DISCOVERY_ENABLED: "true"
+  SAIC_RELOGIN_DELAY: "900"
+  HA_DISCOVERY_ENABLED: "True"
   HA_DISCOVERY_PREFIX: "homeassistant"
 schema:
   MQTT_URI: str
