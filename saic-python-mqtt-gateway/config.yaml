@@ -7,7 +7,7 @@ image: "saicismartapi/saic-python-mqtt-gateway"
 url: "https://github.com/SAIC-iSmart-API/saic-home-assistant-addon"
 slug: "saic_python_mqtt_gateway"
 stage: "stable"
-version: "0.2.3"
+version: "0.3.0"
 legacy: true
 options:
   MQTT_URI: "tcp://localhost:1883"
@@ -21,6 +21,9 @@ options:
   ABRP_USER_TOKEN: ""
   OPENWB_LP_MAP: ""
   LOG_LEVEL: "INFO"
+  SAIC_RELOGIN_DELAY: ""
+  HA_DISCOVERY_ENABLED: "true"
+  HA_DISCOVERY_PREFIX: "homeassistant"
 schema:
   MQTT_URI: str
   MQTT_USER: str?
@@ -33,5 +36,8 @@ schema:
   ABRP_USER_TOKEN: str?
   OPENWB_LP_MAP: str?
   LOG_LEVEL: str?
+  SAIC_RELOGIN_DELAY: str?
+  HA_DISCOVERY_ENABLED: str?
+  HA_DISCOVERY_PREFIX: str?
 init: false
 host_network: true
