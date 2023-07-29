@@ -21,6 +21,9 @@ options:
   ABRP_USER_TOKEN: ""
   OPENWB_LP_MAP: ""
   LOG_LEVEL: "INFO"
+  SAIC_RELOGIN_DELAY: ""
+  HA_DISCOVERY_ENABLED: "true"
+  HA_DISCOVERY_PREFIX: "homeassistant"
 schema:
   MQTT_URI: str
   MQTT_USER: str?
@@ -33,5 +36,8 @@ schema:
   ABRP_USER_TOKEN: str?
   OPENWB_LP_MAP: str?
   LOG_LEVEL: str?
+  SAIC_RELOGIN_DELAY: str?
+  HA_DISCOVERY_ENABLED: str?
+  HA_DISCOVERY_PREFIX: str?
 init: false
 host_network: true
