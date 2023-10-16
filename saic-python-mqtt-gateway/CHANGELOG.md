@@ -1,5 +1,16 @@
 # SAIC MQTT Gateway (Python)
 
+## 0.4.0
+
+### Added
+
+* Control charge current limit
+* Dynamic refresh period during charging
+* Force polling around scheduled charging start
+* Further A/C enhancements
+* Generic charging station integration (OPENWB_LP_MAP argument is deprecated now)
+* TLS support
+
 ## 0.3.0
 
 ### Added
