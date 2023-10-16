@@ -29,6 +29,7 @@ options:
   SAIC_RELOGIN_DELAY: "900"
   HA_DISCOVERY_ENABLED: "True"
   HA_DISCOVERY_PREFIX: "homeassistant"
+  CHARGE_MIN_PERCENTAGE: "1.0"
 schema:
   MQTT_URI: str
   MQTT_SERVER_CERT: str?
@@ -48,5 +49,6 @@ schema:
   SAIC_RELOGIN_DELAY: str?
   HA_DISCOVERY_ENABLED: str?
   HA_DISCOVERY_PREFIX: str?
+  CHARGE_MIN_PERCENTAGE: str
 init: false
 host_network: true
