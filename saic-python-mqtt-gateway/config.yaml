@@ -10,6 +10,7 @@ slug: "saic_python_mqtt_gateway"
 stage: "stable"
 version: "0.4.0"
 legacy: true
+map: "config:rw"
 options:
   MQTT_URI: "tcp://localhost:1883"
   MQTT_SERVER_CERT: ""
