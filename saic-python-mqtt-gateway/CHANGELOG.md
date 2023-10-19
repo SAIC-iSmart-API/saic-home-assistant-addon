@@ -1,5 +1,29 @@
 # SAIC MQTT Gateway (Python)
 
+## 0.4.4
+
+### Fixed
+
+* Error message decoding issue fixed in saic-python-client 1.6.4
+
+## 0.4.3
+
+### Fixed
+
+* Previous fix corrects dispatcher message size for V2 messages. Now it is also fixed for V1 messages.
+
+## 0.4.2
+
+### Fixed
+
+* Previous fix works only for messages without application data. Those are typically error messages that are provided with wrong dispatcher message size
+
+## 0.4.1
+
+### Fixed
+
+* Calculate dispatcher message size and use the calculated value if it differs from the provided API value
+  
 ## 0.4.0
 
 ### Added
