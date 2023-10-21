@@ -10,7 +10,7 @@ image: "saicismartapi/saic-java-mqtt-gateway"
 url: "https://github.com/SAIC-iSmart-API/saic-home-assistant-addon"
 slug: "saic_java_mqtt_gateway"
 stage: "stable"
-version: "0.2.1"
+version: "0.3.0"
 legacy: true
 options:
   MQTT_URI: "tcp://localhost:1883"
