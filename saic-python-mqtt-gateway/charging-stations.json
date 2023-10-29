@@ -1,1 +1,11 @@
-[]
+[[
+    {
+        "chargeStateTopic": "openWB/lp/1/boolChargeStat",
+        "chargingValue": "1",
+        "socTopic": "openWB/set/lp/1/%Soc",
+        "chargerConnectedTopic": "openWB/lp/1/boolPlugStat",
+        "chargerConnectedValue": "1",
+        "vin": "LSJE2409XNG054960"
+    }
+    
+]]
