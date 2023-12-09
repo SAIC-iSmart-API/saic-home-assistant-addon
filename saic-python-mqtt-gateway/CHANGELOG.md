@@ -1,5 +1,17 @@
 # SAIC MQTT Gateway (Python)
 
+## 0.4.6
+
+### Fixed
+
+* Detection of battery type
+* Remove special characters from username to generate valid MQTT topics
+* Setting ha_discovery_enabled to False had no effect
+* Docker image based on python:3.11-slim
+* Force refresh by charging station only if charging value has changed
+* MQTT connection error logging 
+* Front window heating enables "Blowing only"
+
 ## 0.4.5
 
 ### Fixed
