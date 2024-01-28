@@ -32,6 +32,7 @@ options:
   HA_DISCOVERY_ENABLED: "True"
   HA_DISCOVERY_PREFIX: "homeassistant"
   CHARGE_MIN_PERCENTAGE: "1.0"
+  MESSAGES_REQUEST_INTERVAL: "60"
 schema:
   MQTT_URI: str
   MQTT_SERVER_CERT: str?
@@ -52,5 +53,6 @@ schema:
   HA_DISCOVERY_ENABLED: str?
   HA_DISCOVERY_PREFIX: str?
   CHARGE_MIN_PERCENTAGE: str
+  MESSAGES_REQUEST_INTERVAL: str?
 init: false
 host_network: true
