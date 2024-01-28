@@ -1,5 +1,29 @@
 # SAIC MQTT Gateway (Python)
 
+## 0.5.1
+
+### Fixed
+
+* Typo in check_for_new_essages() fixed
+
+### Added
+
+* Configurable messages-request-interval
+
+## 0.5.0
+
+### Changed
+
+* Switch to saic-python-client-ng library (New SAIC API)
+* blowing only command fixed
+
+## 0.4.7
+
+### Changed
+
+* Whenever a chargingValue is received that is different from the last received value, a forced refresh is performed
+* The socTopic is an optional field in the charging station configuration
+
 ## 0.4.6
 
 ### Fixed
