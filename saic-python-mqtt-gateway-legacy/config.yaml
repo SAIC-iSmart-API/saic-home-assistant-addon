@@ -1,0 +1,56 @@
+arch:
+  - aarch64
+  - amd64
+  - armv7
+description: "MQTT-Gateway for SAIC cars like MG5, ZS EV or Marvel R"
+name: "SAIC MQTT Gateway (Python)"
+image: "saicismartapi/saic-python-mqtt-gateway"
+url: "https://github.com/SAIC-iSmart-API/saic-home-assistant-addon"
+slug: "saic_python_mqtt_gateway_legacy"
+stage: "stable"
+version: "0.4.6"
+legacy: true
+map: 
+  - config:rw
+options:
+  MQTT_URI: "tcp://localhost:1883"
+  MQTT_SERVER_CERT: ""
+  MQTT_USER: ""
+  MQTT_PASSWORD: ""
+  MQTT_TOPIC: "saic"
+  SAIC_USER: null
+  SAIC_PASSWORD: null
+  SAIC_URI: "https://tap-eu.soimt.com"
+  ABRP_API_KEY: ""
+  ABRP_USER_TOKEN: ""
+  BATTERY_CAPACITY_MAPPING: ""
+  OPENWB_LP_MAP: ""
+  CHARGING_STATIONS_JSON: ""
+  LOG_LEVEL: "INFO"
+  MQTT_LOG_LEVEL: "INFO"
+  SAIC_RELOGIN_DELAY: "900"
+  HA_DISCOVERY_ENABLED: "True"
+  HA_DISCOVERY_PREFIX: "homeassistant"
+  CHARGE_MIN_PERCENTAGE: "1.0"
+schema:
+  MQTT_URI: str
+  MQTT_SERVER_CERT: str?
+  MQTT_USER: str?
+  MQTT_PASSWORD: password?
+  MQTT_TOPIC: str?
+  SAIC_USER: str
+  SAIC_PASSWORD: password
+  SAIC_URI: str?
+  ABRP_API_KEY: str?
+  ABRP_USER_TOKEN: str?
+  BATTERY_CAPACITY_MAPPING: str?
+  OPENWB_LP_MAP: str?
+  CHARGING_STATIONS_JSON: str?
+  LOG_LEVEL: str?
+  MQTT_LOG_LEVEL: str?
+  SAIC_RELOGIN_DELAY: str?
+  HA_DISCOVERY_ENABLED: str?
+  HA_DISCOVERY_PREFIX: str?
+  CHARGE_MIN_PERCENTAGE: str
+init: false
+host_network: true
