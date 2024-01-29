@@ -15,28 +15,30 @@ The implementation is based on the findings from the [SAIC-iSmart-API Documentat
 
 Following parameters are available via options tab:
 ```
-| ENV variable             | Description                                                                                                                                                                         |
-|--------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| SAIC_USER                | SAIC user name - **required**                                                                                                                                                       |
-| SAIC_PASSWORD            | SAIC password - **required**                                                                                                                                                        |
-| MQTT_URI                 | URI to the MQTT Server. TCP: tcp://mqtt.eclipseprojects.io:1883, WebSocket: ws://mqtt.eclipseprojects.io:9001 or TLS: tls://mqtt.eclipseprojects.io:8883 - **required**             |
-| MQTT_SERVER_CERT         | Path to the server certificate authority file in PEM format is required for TLS                                                                                                     |
-| MQTT_USER                | MQTT user name                                                                                                                                                                      |
-| MQTT_PASSWORD            | MQTT password                                                                                                                                                                       |
-| MQTT_CLIENT_ID           | MQTT Client Identifier. Defaults to saic-python-mqtt-gateway.                                                                                                                       |
-| MQTT_TOPIC               | Provide a custom MQTT prefix to replace the default: saic                                                                                                                           |
-| SAIC_URI                 | SAIC URI. Default is the European Production endpoint: https://tap-eu.soimt.com                                                                                                     |
-| ABRP_API_KEY             | API key for the A Better Route Planner telemetry API. Default is the open source telemetry API key 8cfc314b-03cd-4efe-ab7d-4431cd8f2e2d.                                            |
-| ABRP_USER_TOKEN          | Mapping of VIN to ABRP User Token. Multiple mappings can be provided separated by ',' Example: LSJXXXX=12345-abcdef,LSJYYYY=67890-ghijkl                                            |
-| BATTERY_CAPACITY_MAPPING | Mapping of VIN to full battery capacity. Multiple mappings can be provided separated by ',' Example: LSJXXXX=54.0,LSJYYYY=64.0                                                      |
-| OPENWB_LP_MAP            | Mapping of VIN to openWB charging point. Multiple mappings can be provided separated by ',' Example: 1=LSJXXXX,2=LSJYYYY - **deprecated**                                           |
-| CHARGING_STATIONS_JSON   | Custom charging stations configuration file name                                                                                                                                    |
-| SAIC_RELOGIN_DELAY       | The gateway detects logins from other devices (e.g. the iSMART app). It then pauses it's activity for 900 seconds (default value). The delay can be configured with this parameter. |
-| HA_DISCOVERY_ENABLED     | Home Assistant auto-discovery is enabled (True) by default. It can be disabled (False) with this parameter.                                                                         |
-| HA_DISCOVERY_PREFIX      | The default MQTT prefix for Home Assistant auto-discovery is 'homeassistant'. Another prefix can be configured with this parameter                                                  |
-| MESSAGES_REQUEST_INTERVAL| The interval for retrieving messages in seconds. Default is 60 seconds.                                                                                                             |
-| LOG_LEVEL                | Log level: INFO (default), use DEBUG for detailed output, use CRITICAL for no output, [more info](https://docs.python.org/3/library/logging.html#levels)                            |
-| MQTT_LOG_LEVEL           | Log level of the MQTT Client: INFO (default), use DEBUG for detailed output, use CRITICAL for no output, [more info](https://docs.python.org/3/library/logging.html#levels)         |
+| ENV variable              | Description                                                                                                                                                                         |
+|---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| SAIC_USER                 | SAIC user name - **required**                                                                                                                                                       |
+| SAIC_PASSWORD             | SAIC password - **required**                                                                                                                                                        |
+| MQTT_URI                  | URI to the MQTT Server. TCP: tcp://mqtt.eclipseprojects.io:1883, WebSocket: ws://mqtt.eclipseprojects.io:9001 or TLS: tls://mqtt.eclipseprojects.io:8883 - **required**             |
+| MQTT_SERVER_CERT          | Path to the server certificate authority file in PEM format is required for TLS                                                                                                     |
+| MQTT_USER                 | MQTT user name                                                                                                                                                                      |
+| MQTT_PASSWORD             | MQTT password                                                                                                                                                                       |
+| MQTT_CLIENT_ID            | MQTT Client Identifier. Defaults to saic-python-mqtt-gateway.                                                                                                                       |
+| MQTT_TOPIC                | Provide a custom MQTT prefix to replace the default: saic                                                                                                                           |
+| SAIC_REST_URI             | SAIC API URI. Default is the European Production endpoint: https://gateway-mg-eu.soimt.com/api.app/v1/                                                                              |
+| SAIC_REGION               | SAIC API region. Default is eu.                                                                                                                                                     |
+| SAIC_TENANT_ID            | SAIC API tenant ID. Default is 459771.                                                                                                                                              |
+| ABRP_API_KEY              | API key for the A Better Route Planner telemetry API. Default is the open source telemetry API key 8cfc314b-03cd-4efe-ab7d-4431cd8f2e2d.                                            |
+| ABRP_USER_TOKEN           | Mapping of VIN to ABRP User Token. Multiple mappings can be provided separated by ',' Example: LSJXXXX=12345-abcdef,LSJYYYY=67890-ghijkl                                            |
+| BATTERY_CAPACITY_MAPPING  | Mapping of VIN to full battery capacity. Multiple mappings can be provided separated by ',' Example: LSJXXXX=54.0,LSJYYYY=64.0                                                      |
+| OPENWB_LP_MAP             | Mapping of VIN to openWB charging point. Multiple mappings can be provided separated by ',' Example: 1=LSJXXXX,2=LSJYYYY - **deprecated**                                           |
+| CHARGING_STATIONS_JSON    | Custom charging stations configuration file name                                                                                                                                    |
+| SAIC_RELOGIN_DELAY        | The gateway detects logins from other devices (e.g. the iSMART app). It then pauses it's activity for 900 seconds (default value). The delay can be configured with this parameter. |
+| HA_DISCOVERY_ENABLED      | Home Assistant auto-discovery is enabled (True) by default. It can be disabled (False) with this parameter.                                                                         |
+| HA_DISCOVERY_PREFIX       | The default MQTT prefix for Home Assistant auto-discovery is 'homeassistant'. Another prefix can be configured with this parameter                                                  |
+| MESSAGES_REQUEST_INTERVAL | The interval for retrieving messages in seconds. Default is 60 seconds.                                                                                                             |
+| LOG_LEVEL                 | Log level: INFO (default), use DEBUG for detailed output, use CRITICAL for no output, [more info](https://docs.python.org/3/library/logging.html#levels)                            |
+| MQTT_LOG_LEVEL            | Log level of the MQTT Client: INFO (default), use DEBUG for detailed output, use CRITICAL for no output, [more info](https://docs.python.org/3/library/logging.html#levels)         |
 ```
 
 ## Charging Station Configuration
