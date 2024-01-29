@@ -1,6 +1,6 @@
 # SAIC MQTT Gateway (Python)
 
-Attention: With 0.5.x the saic gateway uses the new API version. Please switch to legacy version if the new API won't work for you!
+Attention: With 0.5.x the saic gateway uses the new API version. Please switch to legacy version if the new API doesn't work for you!
 
 
 ## 0.5.2
