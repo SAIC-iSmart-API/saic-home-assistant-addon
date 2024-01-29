@@ -8,7 +8,7 @@ image: "saicismartapi/saic-python-mqtt-gateway"
 url: "https://github.com/SAIC-iSmart-API/saic-home-assistant-addon"
 slug: "saic_python_mqtt_gateway"
 stage: "stable"
-version: "0.5.1"
+version: "0.5.2"
 legacy: true
 map: 
   - config:rw
@@ -20,7 +20,9 @@ options:
   MQTT_TOPIC: "saic"
   SAIC_USER: null
   SAIC_PASSWORD: null
-  SAIC_URI: "https://tap-eu.soimt.com"
+  SAIC_REST_URI: "https://gateway-mg-eu.soimt.com/api.app/v1/"
+  SAIC_REGION: "eu"
+  SAIC_TENANT_ID: "459771"
   ABRP_API_KEY: ""
   ABRP_USER_TOKEN: ""
   BATTERY_CAPACITY_MAPPING: ""
@@ -41,7 +43,9 @@ schema:
   MQTT_TOPIC: str?
   SAIC_USER: str
   SAIC_PASSWORD: password
-  SAIC_URI: str?
+  SAIC_REST_URI: str?
+  SAIC_REGION: str?
+  SAIC_TENANT_ID: str?
   ABRP_API_KEY: str?
   ABRP_USER_TOKEN: str?
   BATTERY_CAPACITY_MAPPING: str?
