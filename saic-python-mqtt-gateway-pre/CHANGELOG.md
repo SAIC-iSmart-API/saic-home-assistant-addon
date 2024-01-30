@@ -2,15 +2,16 @@
 
 Attention: With 0.5.x the saic gateway uses the new API version. Please switch to legacy version if the new API doesn't work for you!
 
-## 0.5.6 (PreRelease)
+## 0.5.7 (PreRelease)
 
 ### Fixed
 
 * Align some vehicle control commands to their actual behavior on the official app
+* Door closing command should be more reliable now
 
 ### Added
 
-* The new option SAIC_PHONE_COUNTRY_CODE can be used to specify the country code for the phone number used to login
+* The new option `SAIC_PHONE_COUNTRY_CODE` can be used to specify the country code for the phone number used to login
 
 ## 0.5.2
 
