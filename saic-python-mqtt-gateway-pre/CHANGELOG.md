@@ -1,10 +1,14 @@
 # SAIC MQTT Gateway (Python)
 
 Attention: With 0.5.x the saic gateway uses the new API version. Please switch to legacy version if the new API doesn't work for you!
+## 0.5.11 (PreRelease)
 
-## 0.5.10 (PreRelease)
+### Fixed
+* Report correct total battery capacity for the MG4 Throphy Extended Range (Fixes #152)
 
-## Added
+## 0.5.10
+
+### Added
 
 * MQTT: Add support for scheduled battery heating. Payload is JSON with startTime and mode (on or off)
 * HA: Expose scheduled battery heating
@@ -12,14 +16,14 @@ Attention: With 0.5.x the saic gateway uses the new API version. Please switch t
 
 ## 0.5.9
 
-## Added
+### Added
 
 * MQTT: Add support for battery heating. True means ON, False means OFF
 * HA: Expose battery heating as an ON-OFF switch
 
 ## 0.5.8
 
-## Added
+### Added
 
 * MQTT: Add support for heated seats control on both front left and front right seats. Values range from 0-3 on some
   models, 0-1 on others. 0 means OFF
