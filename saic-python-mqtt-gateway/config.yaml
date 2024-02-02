@@ -23,6 +23,7 @@ options:
   SAIC_REST_URI: "https://gateway-mg-eu.soimt.com/api.app/v1/"
   SAIC_REGION: "eu"
   SAIC_TENANT_ID: "459771"
+  SAIC_PHONE_COUNTRY_CODE: ""
   ABRP_API_KEY: ""
   ABRP_USER_TOKEN: ""
   BATTERY_CAPACITY_MAPPING: ""
@@ -46,6 +47,7 @@ schema:
   SAIC_REST_URI: str?
   SAIC_REGION: str?
   SAIC_TENANT_ID: str?
+  SAIC_PHONE_COUNTRY_CODE: str?
   ABRP_API_KEY: str?
   ABRP_USER_TOKEN: str?
   BATTERY_CAPACITY_MAPPING: str?
