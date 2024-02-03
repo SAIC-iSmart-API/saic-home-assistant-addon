@@ -1,11 +1,19 @@
 # SAIC MQTT Gateway (Python)
 
 Attention: With 0.5.x the saic gateway uses the new API version. Please switch to legacy version if the new API doesn't work for you!
-## 0.5.11 (PreRelease)
+
+## 0.5.15 (PreRelease)
 
 ### Fixed
-* Report correct total battery capacity for the MG4 Throphy Extended Range (Fixes #152)
 
+* Battery capacity for MG5 SR Comfort
+
+## 0.5.14
+
+### Fixed
+
+* Report correct total battery capacity for the MG4 Throphy Extended Range (Fixes #152)
+  
 ## 0.5.10
 
 ### Added
