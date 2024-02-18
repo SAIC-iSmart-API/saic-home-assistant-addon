@@ -2,9 +2,21 @@
 
 Attention: With 0.5.x the saic gateway uses the new API version. Please switch to legacy version if the new API doesn't work for you!
 
+## 0.5.15
+
+### Fixed
+
+* Battery capacity for MG5 SR Comfort
+
+## 0.5.14
+
+### Fixed
+
+* Report correct total battery capacity for the MG4 Throphy Extended Range (Fixes #152)
+  
 ## 0.5.10
 
-## Added
+### Added
 
 * MQTT: Add support for scheduled battery heating. Payload is JSON with startTime and mode (on or off)
 * HA: Expose scheduled battery heating
@@ -12,21 +24,21 @@ Attention: With 0.5.x the saic gateway uses the new API version. Please switch t
 
 ## 0.5.9
 
-## Added
+### Added
 
 * MQTT: Add support for battery heating. True means ON, False means OFF
 * HA: Expose battery heating as an ON-OFF switch
 
 ## 0.5.8
 
-## Added
+### Added
 
 * MQTT: Add support for heated seats control on both front left and front right seats. Values range from 0-3 on some
   models, 0-1 on others. 0 means OFF
 * HA: Expose heated seats control as either a select with 4 states (OFF, LOW, MEDIUM, HIGH) or as a ON-OFF switch
   depending on the reported car feature set
 
-## 0.5.7
+## 0.5.7 
 
 ### Fixed
 
@@ -55,6 +67,7 @@ Attention: With 0.5.x the saic gateway uses the new API version. Please switch t
 Both values default to the EU instance production values
 
 ### Removed
+
 * Drop config option `SAIC_URI` as it is no longer relevant
 
 ## 0.5.1
