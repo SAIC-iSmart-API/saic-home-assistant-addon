@@ -1,6 +1,22 @@
 # SAIC MQTT Gateway (Python)
 
-Attention: With 0.5.x the saic gateway uses the new API version. Please switch to legacy version if the new API doesn't work for you!
+Attention: With >= 0.5.x the saic gateway uses the new API version. Please switch to legacy version if the new API doesn't work for you!
+
+## 0.6.0 (WIP)
+
+### Fixed
+
+* Battery capacity for MG ZS EV Standard 2021 by @tosate in #160
+* Add battery capacity for MG5 Maximum Range Luxury by @sfudeus in #166
+* Support for openWB software version 2.0 by @tosate in #172
+* Fix initial remote ac temp value by @nanomad in #175
+* Apply battery_capacity_correction_factor to lastChargeEndingPower by @nanomad in #176
+* Detect DRIVETRAIN_HV_BATTERY_ACTIVE when rear window heater is on by @nanomad in #177
+
+### Added
+
+* Expose power usage stats by @nanomad in #178
+
 
 ## 0.5.15
 
