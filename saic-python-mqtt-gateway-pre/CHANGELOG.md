@@ -12,7 +12,9 @@ Attention: With >= 0.5.x the saic gateway uses the new API version. Please switc
 * Fix initial remote ac temp value by @nanomad in #175
 * Apply battery_capacity_correction_factor to lastChargeEndingPower by @nanomad in #176
 * Detect DRIVETRAIN_HV_BATTERY_ACTIVE when rear window heater is on by @nanomad in #177
-* Fetch electric range from BMS
+* Read electric estimated range from BMS and Car State as it gets reset during parking by @nanomad in #181
+* Update changelog for 0.5.15 by @nanomad in #182
+* Compute charging refresh period based on charging power. by @nanomad in #183
 
 ### Added
 
