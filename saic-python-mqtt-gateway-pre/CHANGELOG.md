@@ -15,10 +15,16 @@ Attention: With >= 0.5.x the saic gateway uses the new API version. Please switc
 * Read electric estimated range from BMS and Car State as it gets reset during parking by @nanomad in #181
 * Update changelog for 0.5.15 by @nanomad in #182
 * Compute charging refresh period based on charging power. by @nanomad in #183
+* Fixes for 0.6.0 by @nanomad in #187
+
 
 ### Added
 
 * Expose power usage stats by @nanomad in #178
+* Re-introduce tests and run them every push by @nanomad in #189
+* Run CI on push and PR by @nanomad in #190
+* Added support for cable lock and unlock by @nanomad in #188
+* Mark car not available if polling fails by @nanomad in #191
 
 
 ## 0.5.15
