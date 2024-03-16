@@ -15,8 +15,10 @@ Attention: With >= 0.5.x the saic gateway uses the new API version. Please switc
 * Read electric estimated range from BMS and Car State as it gets reset during parking by @nanomad in #181
 * Update changelog for 0.5.15 by @nanomad in #182
 * Compute charging refresh period based on charging power. by @nanomad in #183
-* Fixes for 0.6.0 by @nanomad in #187
+* Assume speed is 0.0 if we have no GPS data by @nanomad in #196
 
+## New Contributors
+* @tosate made their first contribution in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/160
 
 ### Added
 
@@ -25,7 +27,9 @@ Attention: With >= 0.5.x the saic gateway uses the new API version. Please switc
 * Run CI on push and PR by @nanomad in #190
 * Added support for cable lock and unlock by @nanomad in #188
 * Mark car not available if polling fails by @nanomad in #191
+* Exponential backoff during polling failures by @nanomad in #193
 
+**Full Changelog**: https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/compare/0.5.15...0.6.0-rc13
 
 ## 0.5.15
 
