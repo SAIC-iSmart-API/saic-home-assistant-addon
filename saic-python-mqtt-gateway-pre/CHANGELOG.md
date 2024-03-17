@@ -16,6 +16,7 @@ Attention: With >= 0.5.x the saic gateway uses the new API version. Please switc
 * Update changelog for 0.5.15 by @nanomad in #182
 * Compute charging refresh period based on charging power. by @nanomad in #183
 * Assume speed is 0.0 if we have no GPS data by @nanomad in #196
+* Fix Charging finished sensor by @nanomad in #197
 
 ## New Contributors
 * @tosate made their first contribution in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/160
