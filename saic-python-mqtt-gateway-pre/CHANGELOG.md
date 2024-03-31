@@ -6,6 +6,7 @@ Attention: With >= 0.5.x the saic gateway uses the new API version. Please switc
 
 ### Fixed
 
+* Do not send invalid data to ABRP and MQTT by @nanomad in #199
 * Battery capacity for MG ZS EV Standard 2021 by @tosate in #160
 * Add battery capacity for MG5 Maximum Range Luxury by @sfudeus in #166
 * Support for openWB software version 2.0 by @tosate in #172
