@@ -8,7 +8,7 @@ image: "saicismartapi/saic-python-mqtt-gateway"
 url: "https://github.com/SAIC-iSmart-API/saic-home-assistant-addon"
 slug: "saic_python_mqtt_gateway-pre"
 stage: "experimental"
-version: "0.6.1-rc1"
+version: "0.6.0"
 legacy: true
 map: 
   - config:rw
@@ -34,7 +34,6 @@ options:
   SAIC_RELOGIN_DELAY: "900"
   HA_DISCOVERY_ENABLED: "True"
   HA_DISCOVERY_PREFIX: "homeassistant"
-  HA_SHOW_UNAVAILABLE: "True"
   CHARGE_MIN_PERCENTAGE: "1.0"
   MESSAGES_REQUEST_INTERVAL: "60"
 schema:
@@ -59,7 +58,6 @@ schema:
   SAIC_RELOGIN_DELAY: str?
   HA_DISCOVERY_ENABLED: str?
   HA_DISCOVERY_PREFIX: str?
-  HA_SHOW_UNAVAILABLE: str?
   CHARGE_MIN_PERCENTAGE: str
   MESSAGES_REQUEST_INTERVAL: str?
 init: false
