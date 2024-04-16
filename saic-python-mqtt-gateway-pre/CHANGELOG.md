@@ -2,6 +2,12 @@
 
 Attention: With 0.5.x the saic gateway uses the new API version. Please switch to legacy version if the new API doesn't work for you!
 
+## 0.6.1 (WIP)
+
+### What's Changed
+
+* HA: Allow overriding the default "Unavailable" behaviour via HA_SHOW_UNAVAILABLE by @nanomad in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/220
+
 ## 0.6.0
 
 ### Import upgrade notes
