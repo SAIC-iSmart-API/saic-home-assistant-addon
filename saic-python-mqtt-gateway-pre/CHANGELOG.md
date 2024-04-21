@@ -10,6 +10,7 @@ Attention: With 0.5.x the saic gateway uses the new API version. Please switch t
 * mplement missing hash function for HaCustomAvailabilityEntry by @nanomad in #222
 * Add IGNORE_BMS_CURRENT_VALIDATION and decode API responses by @nanomad in #225
 * Drop IGNORE_BMS_CURRENT_VALIDATION experiment, just mark current as invalid if bmsPackCrntV is 1 (None or 0 means valid) by @nanomad in #226
+* Add Unit of measure to heading sensor. by @nanomad in #228
 
 ## 0.6.0
 
