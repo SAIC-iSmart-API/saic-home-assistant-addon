@@ -2,7 +2,12 @@
 
 Attention: With 0.5.x the saic gateway uses the new API version. Please switch to legacy version if the new API doesn't work for you!
 
-## 0.6.1 (WIP)
+## 0.6.1
+
+### Fixed
+
+* Charging power and current showing 0 on models different from MG4
+* HA: Heading sensor is now recorded with a unit of measure
 
 ### What's Changed
 
