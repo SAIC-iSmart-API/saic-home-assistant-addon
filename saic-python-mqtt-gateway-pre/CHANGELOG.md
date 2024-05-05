@@ -11,6 +11,9 @@ Attention: With 0.5.x the saic gateway uses the new API version. Please switch t
 * Try to extract remaining electric range from either car or BMS by @nanomad in #236
 * Fix missing None check on remaining_charging_time
 * Fix OBC Current and Power readings
+* Make message handling more robust by @nanomad in #237
+* Process MQTT messages after we receivied a list of cars by @nanomad in #238
+
 
 ### What's changed
 
