@@ -13,6 +13,7 @@ Attention: With 0.5.x the saic gateway uses the new API version. Please switch t
 * Fix OBC Current and Power readings
 * Make message handling more robust by @nanomad in #237
 * Process MQTT messages after we receivied a list of cars by @nanomad in #238
+* Do not send invalid timestamps to ABRP
 
 
 ### What's changed
