@@ -2,6 +2,21 @@
 
 Attention: With 0.5.x the saic gateway uses the new API version. Please switch to legacy version if the new API doesn't work for you!
 
+## 0.6.2
+
+### Fixed
+
+* Fix charge_status.bmsPackCrntV check for ABRP integration by @nanomad in #234
+* Handle unreliable 3d fix information, fall back to reported altitude by @nanomad in #235
+* Make message handling more robust by @nanomad in #237
+* Process MQTT messages after we receivied a list of cars by @nanomad in #238
+* ABRP-1537: Drop future timestamps when pushing data to ABRP by @nanomad in #242
+
+### What's changed
+
+* Try to extract remaining electric range from either car or BMS by @nanomad in #236
+* Add OBC Single phase and three phase power readings
+
 ## 0.6.1
 
 ### Fixed
