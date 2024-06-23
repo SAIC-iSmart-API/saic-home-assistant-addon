@@ -2,6 +2,13 @@
 
 Attention: With 0.5.x the saic gateway uses the new API version. Please switch to legacy version if the new API doesn't work for you!
 
+## 0.6.3-rc2
+
+### What's changed
+
+* Feat: try to recover SoC% from vehicle state if BMS is not responding by @nanomad in #247
+* Fix tests for drivetrain soc from vehicle state by @nanomad in #248
+
 ## 0.6.2
 
 ### Fixed
