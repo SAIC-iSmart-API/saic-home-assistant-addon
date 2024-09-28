@@ -6,6 +6,13 @@ Attention: With 0.5.x the saic gateway uses the new API version. Please switch t
 ### What's changed
 
 * Feat: Added support to send OsmAnd formatted data to compatible vehicle tracker servers like Traccar
+* Feat: Initial support for fossil fuel cars like MG3 Hybrid by @nanomad in #262
+
+### Fixed
+
+* Add suffix to battery heating stop reason topic to allow discriminate it from battery heating topic by @pakozm in #253
+* Gracefully handle scenarios where we don't know the real battery capcity of the car by @nanomad in #261
+
 
 ## 0.6.3
 
