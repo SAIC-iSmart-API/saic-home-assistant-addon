@@ -5,13 +5,16 @@ Attention: With 0.5.x the saic gateway uses the new API version. Please switch t
 
 ### What's changed
 
-* Feat: Added support to send OsmAnd formatted data to compatible vehicle tracker servers like Traccar
-* Feat: Initial support for fossil fuel cars like MG3 Hybrid by @nanomad in #262
-
-### Fixed
-
-* Add suffix to battery heating stop reason topic to allow discriminate it from battery heating topic by @pakozm in #253
-* Gracefully handle scenarios where we don't know the real battery capcity of the car by @nanomad in #261
+* Updated README.md with SAIC API Endpoints section by @karter16 in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/260
+* Add suffix to battery heating stop reason topic to allow discriminate it from battery heating topic by @pakozm in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/253
+* Gracefully handle scenarios where we don't know the real battery capcity of the car by @nanomad in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/261
+* Initial support for fossil fuel cars like MG3 Hybrid by @nanomad in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/262
+* Move relogin logic to the MQTT Gateway instead of the API library by @nanomad in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/265
+* [WIP] Expose Find by car functionality by @nanomad in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/266
+* Fix #73: Allow running the gateway without an MQTT connection by @nanomad in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/267
+* Minor updates by @nanomad in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/268
+*  Vehicle handler should only react to explicit and well-known set commands (Fixes #276)
+* Drop car max admissible range to < 2046.0 km (Fixes #71) 
 
 
 ## 0.6.3
