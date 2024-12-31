@@ -1,10 +1,11 @@
 # SAIC MQTT Gateway (Python)
 
-Attention: With 0.5.x the saic gateway uses the new API version. Please switch to legacy version if the new API doesn't work for you!
-## 0.7.0 (WIP)
+## 0.7.0
 
 ### What's changed
 
+* Fixed many stability issues with the login process
+* Fixed battery capacity calculation for newer MG4 variants
 * Updated README.md with SAIC API Endpoints section by @karter16 in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/260
 * Add suffix to battery heating stop reason topic to allow discriminate it from battery heating topic by @pakozm in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/253
 * Gracefully handle scenarios where we don't know the real battery capcity of the car by @nanomad in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/261
@@ -13,8 +14,8 @@ Attention: With 0.5.x the saic gateway uses the new API version. Please switch t
 * [WIP] Expose Find by car functionality by @nanomad in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/266
 * Fix #73: Allow running the gateway without an MQTT connection by @nanomad in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/267
 * Minor updates by @nanomad in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/268
-*  Vehicle handler should only react to explicit and well-known set commands (Fixes #276)
-* Drop car max admissible range to < 2046.0 km (Fixes #71) 
+* #283: Publish HA discovery once per car by @nanomad in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/284
+* #279: Restore the original normalization rule by @nanomad in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/285
 
 
 ## 0.6.3

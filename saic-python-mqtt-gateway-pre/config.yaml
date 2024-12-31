@@ -8,7 +8,7 @@ image: "saicismartapi/saic-python-mqtt-gateway"
 url: "https://github.com/SAIC-iSmart-API/saic-home-assistant-addon"
 slug: "saic_python_mqtt_gateway-pre"
 stage: "experimental"
-version: "0.7.0-rc13"
+version: "0.7.0"
 legacy: true
 map: 
   - config:rw
@@ -55,8 +55,10 @@ schema:
   SAIC_REGION: str?
   SAIC_TENANT_ID: str?
   SAIC_PHONE_COUNTRY_CODE: str?
+  PUBLISH_RAW_API_DATA_ENABLED: str?
   ABRP_API_KEY: str?
   ABRP_USER_TOKEN: str?
+  PUBLISH_RAW_ABRP_DATA_ENABLED: str?
   BATTERY_CAPACITY_MAPPING: str?
   OPENWB_LP_MAP: str?
   CHARGING_STATIONS_JSON: str?
@@ -68,5 +70,9 @@ schema:
   HA_SHOW_UNAVAILABLE: str?
   CHARGE_MIN_PERCENTAGE: str
   MESSAGES_REQUEST_INTERVAL: str?
+  OSMAND_SERVER_URI: str?
+  OSMAND_DEVICE_ID: str?
+  PUBLISH_RAW_OSMAND_DATA_ENABLED: str?
+
 init: false
 host_network: true
