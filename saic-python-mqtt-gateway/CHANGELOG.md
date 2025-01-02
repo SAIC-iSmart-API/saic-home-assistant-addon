@@ -1,5 +1,10 @@
 # SAIC MQTT Gateway (Python)
 
+## 0.7.1
+
+### What's changed
+* Gracefully handle cases where we receive no messages from SAIC API
+
 ## 0.7.0
 
 ### What's changed
@@ -16,6 +21,7 @@
 * Minor updates by @nanomad in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/268
 * #283: Publish HA discovery once per car by @nanomad in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/284
 * #279: Restore the original normalization rule by @nanomad in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/285
+
 
 ## 0.6.3
 
