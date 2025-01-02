@@ -1,5 +1,10 @@
 # SAIC MQTT Gateway (Python)
 
+## 0.7.1 (WIP)
+
+### What's changed
+* Gracefully handle cases where we receive no messages from SAIC API
+
 ## 0.7.0
 
 ### What's changed
