@@ -6,6 +6,10 @@
 * #292: Push HA discovery again when HA connects to broker by @krombel in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/294
 * add random delay before pushing discovery by @krombel in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/295
 * #296: Detect charging from BMS instead of car state by @nanomad in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/298
+* Mark 'Last Charge SoC kWh' in HA as a TOTAL_INCRESING sensor so that it can be used in Energy Dashboard by @nanomad
+* Expose journey ID to Home Assistant by @nanomad
+* Internally mark the car as "shutdown" only after the car state changes.
+This avoids looking for a "charging started" event as soon as the charging is completed by @nanomad
 
 ### New Contributors
 * @krombel made their first contribution in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/294
