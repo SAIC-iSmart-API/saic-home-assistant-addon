@@ -1,6 +1,6 @@
 # SAIC MQTT Gateway (Python)
 
-## 0.7.2 (WIP)
+## 0.9.0 (WIP)
 
 ### What's Changed
 * #292: Push HA discovery again when HA connects to broker by @krombel in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/294
@@ -10,6 +10,8 @@
 * Expose journey ID to Home Assistant by @nanomad
 * Internally mark the car as "shutdown" only after the car state changes.
 This avoids looking for a "charging started" event as soon as the charging is completed by @nanomad
+* Keep retrying initial login by @nanomad in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/319
+* Publish window status only if mileage is reported properly by @nanomad in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/320
 
 ### New Contributors
 * @krombel made their first contribution in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/294
