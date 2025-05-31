@@ -1,5 +1,15 @@
 # SAIC MQTT Gateway (Python)
 
+## 0.9.2
+
+### What's Changed
+* Migrated Last Charge SoC kWh sensor to 'measurement' state_class
+
+## 0.9.1
+
+### What's Changed
+* Fixed a bug in message processing when no messages where found on SAIC servers
+
 ## 0.9.0
 
 ### What's Changed
