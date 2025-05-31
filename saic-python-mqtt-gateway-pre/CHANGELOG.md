@@ -1,8 +1,9 @@
 # SAIC MQTT Gateway (Python)
 
-## 0.9.0 (WIP)
+## 0.9.0
 
 ### What's Changed
+* Compatibiltity with the latest mobile app release
 * #292: Push HA discovery again when HA connects to broker by @krombel in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/294
 * add random delay before pushing discovery by @krombel in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/295
 * #296: Detect charging from BMS instead of car state by @nanomad in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/298
