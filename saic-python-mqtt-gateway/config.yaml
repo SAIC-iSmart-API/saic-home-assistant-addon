@@ -7,7 +7,7 @@ image: "saicismartapi/saic-python-mqtt-gateway"
 url: "https://github.com/SAIC-iSmart-API/saic-home-assistant-addon"
 slug: "saic_python_mqtt_gateway"
 stage: "stable"
-version: "0.9.2"
+version: "0.9.3"
 legacy: true
 map: 
   - config:rw
