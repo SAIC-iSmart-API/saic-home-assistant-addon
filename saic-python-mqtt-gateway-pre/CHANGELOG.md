@@ -1,8 +1,13 @@
 # SAIC MQTT Gateway (Python)
 
+## 0.9.4
+
+### What's Changed
+* Introduce armv7 support instead of armv6 by @nanomad in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/336
+
 ## 0.9.3
 
-## What's Changed
+### What's Changed
 * Restore phone login by @nanomad in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/334
 
 ## 0.9.2
