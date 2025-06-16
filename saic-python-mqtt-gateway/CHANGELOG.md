@@ -1,5 +1,20 @@
 # SAIC MQTT Gateway (Python)
 
+## 0.9.8
+
+### What's Changed
+*  VehicleInfo: Use case-insensitive property codes
+
+## 0.9.7
+
+### What's Changed
+*  Expose "Total Battery Capacity" in HA
+
+## 0.9.6
+
+### What's Changed
+*  Simplify battery capacity decoding
+
 ## 0.9.5
 
 ### What's Changed
