@@ -46,8 +46,8 @@ options:
 schema:
   MQTT_URI: str
   MQTT_SERVER_CERT: str?
-  MQTT_USER: str
-  MQTT_PASSWORD: password
+  MQTT_USER: str?
+  MQTT_PASSWORD: password?
   MQTT_TOPIC: str?
   SAIC_USER: str
   SAIC_PASSWORD: password
