@@ -1,5 +1,18 @@
 # SAIC MQTT Gateway (Python)
 
+## 0.10.0-rc3
+
+### What's Changed
+* Added docker compose to README and some Environment fixes by @CubieMedia in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/341
+* Feat: Run as non-root by @nanomad in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/351
+* Upgrade saic-ismart-client-ng to 0.9.2 by @nanomad in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/352
+* Bump version to 0.10.0 by @nanomad in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/353
+* Allow use of TLS without custom/self-signed certificate chain by @bj00rn in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/349
+
+### New Contributors
+* @CubieMedia made their first contribution in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/341
+* @bj00rn made their first contribution in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/349
+
 ## 0.9.8
 
 ### What's Changed
