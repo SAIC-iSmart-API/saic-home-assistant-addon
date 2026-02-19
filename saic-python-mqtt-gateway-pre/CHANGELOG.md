@@ -1,8 +1,6 @@
 # SAIC MQTT Gateway (Python)
 
-
-## 0.10.0-rc8
-
+## 0.10.0-rc10
 
 ### What's Changed
 * Added docker compose to README and some Environment fixes by @CubieMedia in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/341
@@ -21,13 +19,18 @@
 * fix: Fix OpenWB logging error due to type mismatch by @zusorio in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/374
 * Add versioning labels and start-up message to Docker image for MQTT Gateway by @tosate in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/372
 * Updates HA auto-discovery config, fixes #376 by @Troon in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/377
+* Add MG Cyberster (EC32) battery capacity by @nanomad in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/400
+* Handle PHEV ignore codes for target SOC and scheduled charging by @nanomad in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/401
+* fix: filter unsupported SoC options for vehicles without target SoC by @nanomad in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/403
+* fix: preserve meaningful stop reasons for battery heating and charging by @nanomad in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/404
+* fix: republish command entity states after broker/HA restart by @nanomad in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/402
 
 ### New Contributors
 * @CubieMedia made their first contribution in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/341
 * @bj00rn made their first contribution in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/349
 * @zusorio made their first contribution in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/374
 
-**Full Changelog**: https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/compare/0.9.8...0.10.0-rc8
+**Full Changelog**: https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/compare/0.9.8...0.10.0-rc10
 
 ## 0.9.8
 
