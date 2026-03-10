@@ -1,5 +1,59 @@
 # SAIC MQTT Gateway (Python)
 
+## 0.10.0
+
+### Added
+
+* Publish gateway version to MQTT and HA device info
+* Add origin info to HA MQTT discovery payloads
+* Add gateway HA device with account diagnostics and unified login flow
+* Fetch and publish user timezone from SAIC API
+* Add post-login callbacks to ReloginHandler for immediate relogin on API logout
+* Add MG Cyberster (EC32) battery capacity
+* Add support for configurable total battery capacity via MQTT commands
+* Read environment variables from `.env` file if present by @bj00rn in #366
+* Add option to skip hostname check when using custom TLS certificate by @bj00rn in #362
+* Allow use of TLS without custom/self-signed certificate chain by @bj00rn in #349
+* Connect early to MQTT to allow dumping of the initial login process
+* Enable deferred MQTT command handling
+* Print version on start-up and add container image labels by @tosate in #372
+* Add VS Code devcontainer configuration by @bj00rn in #358
+* Set non-root user in Dockerfile by @nanomad in #351
+* Added docker compose commands to README by @CubieMedia in #341
+
+### Fixed
+
+* Correct battery heating and scheduled charging timezone handling (#395, #157)
+* Preserve meaningful stop reasons for battery heating and charging (#396)
+* Republish command entity states after broker/HA restart
+* Filter unsupported SoC options for vehicles without target SoC (#399)
+* Handle PHEV ignore codes for target SoC and scheduled charging
+* Improve relogin strategy and fix race conditions (#386)
+* Update HA auto-discovery config and remove deprecated `object_id` from HA MQTT discovery payloads (#376) by @Troon in #377
+* Fall back to `RELEASE_VERSION` env var for gateway version in Docker
+* Fix OpenWB logging error due to type mismatch by @zusorio in #374
+* Fix broken helptext interpolation by @bj00rn in #361
+* Clear some retained messages after processing them
+* OsmAnd: Default to knots as a unit of measure
+
+### Changed
+
+* Rework help output with argument groups by @bj00rn in #363
+* Extract and refactor command handlers using strategy pattern
+* Extract MqttCommandHandler and OpenWB integration into separate modules
+* Major internal refactoring of HA discovery messages and VehicleDataPublisher
+* Upgrade saic-ismart-client-ng to 0.9.2
+* Drop pylint in favor of ruff and mypy
+* Update README.md for Türkiye API and region code information by @nirnaeth-arnoediad in #409
+
+### New Contributors
+
+* @CubieMedia made their first contribution in #341
+* @bj00rn made their first contribution in #349
+* @zusorio made their first contribution in #374
+* @Troon made their first contribution in #377
+* @nirnaeth-arnoediad made their first contribution in #409
+
 ## 0.9.8
 
 ### What's Changed

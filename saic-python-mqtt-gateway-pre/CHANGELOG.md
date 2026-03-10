@@ -1,36 +1,60 @@
 # SAIC MQTT Gateway (Python)
 
-## 0.10.0-rc10
+## 0.10.0
 
-### What's Changed
-* Added docker compose to README and some Environment fixes by @CubieMedia in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/341
-* Feat: Run as non-root by @nanomad in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/351
-* Upgrade saic-ismart-client-ng to 0.9.2 by @nanomad in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/352
-* Bump version to 0.10.0 by @nanomad in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/353
-* Allow use of TLS without custom/self-signed certificate chain by @bj00rn in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/349
-* Feature: Configurable Battery Capacity via MQTT by @nanomad in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/357
-* Add devcontainer for project by @bj00rn in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/358
-* OsmAnd: Default to knots as a unit of measure by @nanomad in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/360
-* Fix broken helptext interpolation by @bj00rn in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/361
-* Add option to skip hostname check when using custom certificate by @bj00rn in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/362
-* Add test case for parser.print_help() by @nanomad in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/363
-* Rework argparse help output by @bj00rn in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/364
-* Read env variables from .env file if present by @bj00rn in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/366
-* fix: Fix OpenWB logging error due to type mismatch by @zusorio in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/374
-* Add versioning labels and start-up message to Docker image for MQTT Gateway by @tosate in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/372
-* Updates HA auto-discovery config, fixes #376 by @Troon in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/377
-* Add MG Cyberster (EC32) battery capacity by @nanomad in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/400
-* Handle PHEV ignore codes for target SOC and scheduled charging by @nanomad in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/401
-* fix: filter unsupported SoC options for vehicles without target SoC by @nanomad in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/403
-* fix: preserve meaningful stop reasons for battery heating and charging by @nanomad in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/404
-* fix: republish command entity states after broker/HA restart by @nanomad in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/402
+### Added
+
+* Publish gateway version to MQTT and HA device info
+* Add origin info to HA MQTT discovery payloads
+* Add gateway HA device with account diagnostics and unified login flow
+* Fetch and publish user timezone from SAIC API
+* Add post-login callbacks to ReloginHandler for immediate relogin on API logout
+* Add MG Cyberster (EC32) battery capacity
+* Add support for configurable total battery capacity via MQTT commands
+* Read environment variables from `.env` file if present by @bj00rn in #366
+* Add option to skip hostname check when using custom TLS certificate by @bj00rn in #362
+* Allow use of TLS without custom/self-signed certificate chain by @bj00rn in #349
+* Connect early to MQTT to allow dumping of the initial login process
+* Enable deferred MQTT command handling
+* Print version on start-up and add container image labels by @tosate in #372
+* Add VS Code devcontainer configuration by @bj00rn in #358
+* Set non-root user in Dockerfile by @nanomad in #351
+* Added docker compose commands to README by @CubieMedia in #341
+
+### Fixed
+
+* Correct battery heating and scheduled charging timezone handling (#395, #157)
+* Preserve meaningful stop reasons for battery heating and charging (#396)
+* Republish command entity states after broker/HA restart
+* Filter unsupported SoC options for vehicles without target SoC (#399)
+* Handle PHEV ignore codes for target SoC and scheduled charging
+* Improve relogin strategy and fix race conditions (#386)
+* Update HA auto-discovery config and remove deprecated `object_id` from HA MQTT discovery payloads (#376) by @Troon in #377
+* Fall back to `RELEASE_VERSION` env var for gateway version in Docker
+* Fix OpenWB logging error due to type mismatch by @zusorio in #374
+* Fix broken helptext interpolation by @bj00rn in #361
+* Clear some retained messages after processing them
+* OsmAnd: Default to knots as a unit of measure
+
+### Changed
+
+* Rework help output with argument groups by @bj00rn in #363
+* Extract and refactor command handlers using strategy pattern
+* Extract MqttCommandHandler and OpenWB integration into separate modules
+* Major internal refactoring of HA discovery messages and VehicleDataPublisher
+* Upgrade saic-ismart-client-ng to 0.9.2
+* Drop pylint in favor of ruff and mypy
+* Update README.md for Türkiye API and region code information by @nirnaeth-arnoediad in #409
 
 ### New Contributors
-* @CubieMedia made their first contribution in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/341
-* @bj00rn made their first contribution in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/349
-* @zusorio made their first contribution in https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/pull/374
 
-**Full Changelog**: https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/compare/0.9.8...0.10.0-rc10
+* @CubieMedia made their first contribution in #341
+* @bj00rn made their first contribution in #349
+* @zusorio made their first contribution in #374
+* @Troon made their first contribution in #377
+* @nirnaeth-arnoediad made their first contribution in #409
+
+**Full Changelog**: https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/compare/0.9.8...0.10.0
 
 ## 0.9.8
 
