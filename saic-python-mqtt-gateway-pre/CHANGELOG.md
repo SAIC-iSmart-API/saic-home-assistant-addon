@@ -1,5 +1,40 @@
 # SAIC MQTT Gateway (Python)
 
+## 0.11.0
+
+### Added
+
+* Add Python 3.14 support (#416)
+* Add SoC timestamp support for openWB integration (#425)
+* Add energy-based vehicle refresh for openWB integration (#426)
+* Add polling phase visibility and `charging_detection` refresh mode (#430)
+* Add HA Event entity for command errors (#432)
+* Add HA Event entity for vehicle messages (#434)
+
+### Fixed
+
+* Improve HA discovery sensor configurations (#418)
+* Add max-page guard to alarm message fetching loop (#420)
+* Improve ABRP and OsmAnd integration error handling and cleanup (#421)
+* Use `maxsplit=1` in string split operations (#422)
+* Standardize on UTC-aware datetimes in `vehicle.py` (#423)
+* Miscellaneous code quality and test fixes (#424)
+* Reject vehicle status updates with bogus timestamps (#427)
+* Skip partial mileage values that exceed total mileage (#428)
+* Reset shutdown grace period when significant charging stops (#431)
+* Publish window entities as `binary_sensor` instead of `switch` (#435)
+* Deduplicate `pollingPhase` MQTT publishes (#436)
+
+### Changed
+
+* Parallelize multi-arch Docker builds with reusable workflow (#413)
+* Bump all GitHub Actions to Node 24 (#414)
+* Replace `pmeier/pytest-results-action` with `mikepenz/action-junit-report` (#415)
+* Update dev dependencies (ruff, pytest, pylint) (#417)
+* Add local setup guide and `CONTRIBUTING.md` (#429)
+
+**Full Changelog**: https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/compare/0.10.0...0.11.0
+
 ## 0.10.0
 
 ### Added
