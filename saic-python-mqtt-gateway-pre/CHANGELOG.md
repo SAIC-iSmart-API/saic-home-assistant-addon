@@ -1,5 +1,73 @@
 # SAIC MQTT Gateway (Python)
 
+## 0.12.0 (WIP)
+
+### Added
+
+* Add `--saic-user-timezone` / `SAIC_USER_TIMEZONE` config option to force
+  the account timezone instead of relying on the SAIC API value. Useful when
+  the API reports a wrong DST offset (#438). Discrepancies between the forced
+  zone and the API value are detected by comparing the current UTC offset and
+  logged at WARNING level.
+
+### Fixed
+
+* Persist user-set HA gateway entities across gateway restarts by retaining
+  their `/set` commands on the MQTT broker (refresh mode, all four refresh
+  periods, and total battery capacity). On reconnect the existing command-
+  dispatch path replays the retained value before `configure_missing()` would
+  apply config defaults. A retained one-shot refresh mode (`force`,
+  `charging_detection`) is dropped on replay so a single-shot poll does not
+  fire on every restart.
+
+  Note: on first upgrade only entities you change *after* the upgrade become
+  persistent. Existing retained STATE values on the broker are not converted
+  into retained `/set` commands.
+
+* Republish the effective Total Battery Capacity to its state topic right after
+  the user updates the HA number. The `_set` handler used to only mutate the
+  in-memory override and rely on the next vehicle poll to refresh the shared
+  sensor topic, leaving the HA sensor stuck on the previous (often hardcoded
+  per-model default) value while the number widget already showed the new
+  setting. A payload of `0` re-publishes the per-model default via
+  `real_battery_capacity`.
+
+
+## 0.11.0
+
+### Added
+
+* Add Python 3.14 support (#416)
+* Add SoC timestamp support for openWB integration (#425)
+* Add energy-based vehicle refresh for openWB integration (#426)
+* Add polling phase visibility and `charging_detection` refresh mode (#430)
+* Add HA Event entity for command errors (#432)
+* Add HA Event entity for vehicle messages (#434)
+
+### Fixed
+
+* Improve HA discovery sensor configurations (#418)
+* Add max-page guard to alarm message fetching loop (#420)
+* Improve ABRP and OsmAnd integration error handling and cleanup (#421)
+* Use `maxsplit=1` in string split operations (#422)
+* Standardize on UTC-aware datetimes in `vehicle.py` (#423)
+* Miscellaneous code quality and test fixes (#424)
+* Reject vehicle status updates with bogus timestamps (#427)
+* Skip partial mileage values that exceed total mileage (#428)
+* Reset shutdown grace period when significant charging stops (#431)
+* Publish window entities as `binary_sensor` instead of `switch` (#435)
+* Deduplicate `pollingPhase` MQTT publishes (#436)
+
+### Changed
+
+* Parallelize multi-arch Docker builds with reusable workflow (#413)
+* Bump all GitHub Actions to Node 24 (#414)
+* Replace `pmeier/pytest-results-action` with `mikepenz/action-junit-report` (#415)
+* Update dev dependencies (ruff, pytest, pylint) (#417)
+* Add local setup guide and `CONTRIBUTING.md` (#429)
+
+**Full Changelog**: https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/compare/0.10.0...0.11.0
+
 ## 0.10.0
 
 ### Added
