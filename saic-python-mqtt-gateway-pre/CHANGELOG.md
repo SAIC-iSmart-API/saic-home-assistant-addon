@@ -1,5 +1,38 @@
 # SAIC MQTT Gateway (Python)
 
+## 0.12.0 (WIP)
+
+### Added
+
+* Add `--saic-user-timezone` / `SAIC_USER_TIMEZONE` config option to force
+  the account timezone instead of relying on the SAIC API value. Useful when
+  the API reports a wrong DST offset (#438). Discrepancies between the forced
+  zone and the API value are detected by comparing the current UTC offset and
+  logged at WARNING level.
+
+### Fixed
+
+* Persist user-set HA gateway entities across gateway restarts by retaining
+  their `/set` commands on the MQTT broker (refresh mode, all four refresh
+  periods, and total battery capacity). On reconnect the existing command-
+  dispatch path replays the retained value before `configure_missing()` would
+  apply config defaults. A retained one-shot refresh mode (`force`,
+  `charging_detection`) is dropped on replay so a single-shot poll does not
+  fire on every restart.
+
+  Note: on first upgrade only entities you change *after* the upgrade become
+  persistent. Existing retained STATE values on the broker are not converted
+  into retained `/set` commands.
+
+* Republish the effective Total Battery Capacity to its state topic right after
+  the user updates the HA number. The `_set` handler used to only mutate the
+  in-memory override and rely on the next vehicle poll to refresh the shared
+  sensor topic, leaving the HA sensor stuck on the previous (often hardcoded
+  per-model default) value while the number widget already showed the new
+  setting. A payload of `0` re-publishes the per-model default via
+  `real_battery_capacity`.
+
+
 ## 0.11.0
 
 ### Added
