@@ -1,4 +1,4 @@
-FROM saicismartapi/saic-python-mqtt-gateway:0.11.0-rc6
+FROM saicismartapi/saic-python-mqtt-gateway:0.12.0-rc3
 
 COPY run.sh /run.sh
 
