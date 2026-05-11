@@ -32,6 +32,7 @@
   setting. A payload of `0` re-publishes the per-model default via
   `real_battery_capacity`.
 
+* Derive SoC Kwh from the SoC % if the car does not report an effective battery capacity
 
 ## 0.11.0
 
