@@ -34,6 +34,12 @@
 
 * Derive SoC Kwh from the SoC % if the car does not report an effective battery capacity
 
+### Changed
+
+*  Modernize the addon structure
+*  Switch to [addon_configs](https://developers.home-assistant.io/blog/2023/11/06/public-addon-config/) with environment file (gateway.env)
+*  Reduce the documentation page
+
 ## 0.11.0
 
 ### Added
