@@ -1,5 +1,36 @@
 # SAIC MQTT Gateway (Python)
 
+## 0.12.0
+
+### Added
+
+* Add `SAIC_USER_TIMEZONE` config option to force the account timezone instead
+  of relying on the SAIC API value. Accepts an IANA name (e.g.
+  `Australia/Sydney`) or the API's `GMT±HH:MM` form. Useful when the API
+  reports a wrong DST offset (#444).
+* Add SoC kWh fallback for vehicles that do not report `realtimePower` — the
+  gateway now estimates energy from the SoC delta and battery capacity so the
+  kWh sensors stay populated (#448).
+* Add battery capacity support for MG4 Urban (AH4EM series), defaulting
+  non-Long-Range variants to 54 kWh (#452, #455).
+* Home Assistant SoC icon now dynamically reflects the charging state
+  (charging / discharging / idle) (#458).
+
+### Fixed
+
+* Persist user-set HA gateway settings (refresh mode, refresh periods, total
+  battery capacity) across gateway restarts via retained `/set` commands on the
+  MQTT broker. A retained one-shot refresh mode (`force`, `charging_detection`)
+  is dropped on replay. Note: persistence kicks in only after you change a
+  setting post-upgrade (#441).
+* Forward the retain flag through all typed publish methods so retained state
+  survives broker reconnects (#443).
+* Republish the effective Total Battery Capacity immediately after the user
+  updates the HA number, keeping the sensor in sync with the number widget
+  (#445).
+
+**Full Changelog**: https://github.com/SAIC-iSmart-API/saic-python-mqtt-gateway/compare/0.11.0...0.12.0
+
 ## 0.11.0
 
 ### Added
