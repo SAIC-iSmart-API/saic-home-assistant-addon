@@ -28,6 +28,8 @@ do when you run the service from a docker container).
 | --saic-region               | SAIC_REGION                  | SAIC API region. Default is eu.                                                                                                                                                     |
 | --saic-tenant-id            | SAIC_TENANT_ID               | SAIC API tenant ID. Default is 459771.                                                                                                                                              |
 | --saic-relogin-delay        | SAIC_RELOGIN_DELAY           | The gateway detects logins from other devices (e.g. the iSMART app). It then pauses it's activity for 900 seconds (default value). The delay can be configured with this parameter. |
+| --saic-read-timeout         | SAIC_READ_TIMEOUT            | HTTP read timeout for the SAIC API in seconds. The gateway default (10 seconds) is used when empty. |
+| --account-refresh-interval  | ACCOUNT_REFRESH_INTERVAL     | The interval for refreshing account-level data (vehicle list, timezone) in seconds. Default is 86400 (24 hours). |
 | --messages-request-interval | MESSAGES_REQUEST_INTERVAL    | The interval for retrieving messages in seconds. Default is 60 seconds.                                                                                                             |
 | --battery-capacity-mapping  | BATTERY_CAPACITY_MAPPING     | Mapping of VIN to full battery capacity. Multiple mappings can be provided separated by ',' Example: LSJXXXX=54.0,LSJYYYY=64.0                                                      |
 | --charge-min-percentage     | CHARGE_MIN_PERCENTAGE        | How many % points we should try to refresh the charge state. 1.0 by default                                                                                                         |
@@ -48,9 +50,11 @@ The following are the known available endpoints:
 |---------------------|------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | -m or --mqtt-uri    | MQTT_URI         | URI to the MQTT Server. TCP: tcp://mqtt.eclipseprojects.io:1883, WebSocket: ws://mqtt.eclipseprojects.io:9001 or TLS: tls://mqtt.eclipseprojects.io:8883 - Leave it empty to disable MQTT connection |
 | --mqtt-server-cert  | MQTT_SERVER_CERT | Path to the server certificate authority file in PEM format is required for TLS                                                                                                                      |
+| --mqtt-server-cert-check-hostname | MQTT_SERVER_CERT_CHECK_HOSTNAME | Check the TLS certificate hostname when using a custom certificate. Set to False for a self-signed certificate without a matching hostname. This is insecure. True by default. |
 | --mqtt-user         | MQTT_USER        | MQTT user name                                                                                                                                                                                       |
 | --mqtt-password     | MQTT_PASSWORD    | MQTT password                                                                                                                                                                                        |
 | --mqtt-client-id    | MQTT_CLIENT_ID   | MQTT Client Identifier. Defaults to saic-python-mqtt-gateway.                                                                                                                                        |
+| --mqtt-allow-dots-in-topic | MQTT_ALLOW_DOTS_IN_TOPIC | Allow dots in MQTT topics. True by default. |
 | --mqtt-topic-prefix | MQTT_TOPIC       | Provide a custom MQTT prefix to replace the default: saic                                                                                                                                            |
 |                     | MQTT_LOG_LEVEL   | Log level of the MQTT Client: INFO (default), use DEBUG for detailed output, use CRITICAL for no output, [more info](https://docs.python.org/3/library/logging.html#levels)                          |
 
@@ -87,6 +91,7 @@ Those parameters can be used to allow the MQTT Gateway to send data to an OsmAnd
 |---------------------------|---------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | --osmand-server-uri       | OSMAND_SERVER_URI               | The URL of your OsmAnd Server                                                                                                                                                                |
 | --osmand-device-id        | OSMAND_DEVICE_ID                | Mapping of VIN to OsmAnd Device Id. Multiple mappings can be provided separated by ',' Example: LSJXXXX=12345-abcdef,LSJYYYY=67890-ghijkl. Defaults to use the car VIN as Device Id if unset |
+| --osmand-use-knots | OSMAND_USE_KNOTS | Send speeds in knots instead of km/h in OsmAnd messages, to stay compatible with Traccar. True by default. |
 | --publish-raw-osmand-data | PUBLISH_RAW_OSMAND_DATA_ENABLED | Publish raw ABRP OSMAND request/response to MQTT. Disabled (False) by default.                                                                                                               |
 
 ### OpenWB Integration

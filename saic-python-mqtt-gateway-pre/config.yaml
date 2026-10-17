@@ -8,16 +8,19 @@ image: "saicismartapi/saic-python-mqtt-gateway"
 url: "https://github.com/SAIC-iSmart-API/saic-home-assistant-addon"
 slug: "saic_python_mqtt_gateway-pre"
 stage: "experimental"
-version: "0.12.0"
+version: "0.13.0-rc3"
 legacy: true
 map: 
   - config:rw
 options:
   MQTT_URI: "tcp://localhost:1883"
   MQTT_SERVER_CERT: ""
+  MQTT_SERVER_CERT_CHECK_HOSTNAME: "True"
   MQTT_USER: ""
   MQTT_PASSWORD: ""
   MQTT_TOPIC: "saic"
+  MQTT_CLIENT_ID: "saic-python-mqtt-gateway"
+  MQTT_ALLOW_DOTS_IN_TOPIC: "True"
   SAIC_USER: null
   SAIC_PASSWORD: null
   SAIC_REST_URI: "https://gateway-mg-eu.soimt.com/api.app/v1/"
@@ -35,6 +38,8 @@ options:
   LOG_LEVEL: "INFO"
   MQTT_LOG_LEVEL: "INFO"
   SAIC_RELOGIN_DELAY: "900"
+  SAIC_READ_TIMEOUT: ""
+  ACCOUNT_REFRESH_INTERVAL: "86400"
   HA_DISCOVERY_ENABLED: "True"
   HA_DISCOVERY_PREFIX: "homeassistant"
   HA_SHOW_UNAVAILABLE: "True"
@@ -42,14 +47,18 @@ options:
   MESSAGES_REQUEST_INTERVAL: "60"
   OSMAND_SERVER_URI: ""
   OSMAND_DEVICE_ID: ""
+  OSMAND_USE_KNOTS: "True"
   PUBLISH_RAW_OSMAND_DATA_ENABLED: "False"
 
 schema:
   MQTT_URI: str
   MQTT_SERVER_CERT: str?
+  MQTT_SERVER_CERT_CHECK_HOSTNAME: str?
   MQTT_USER: str?
   MQTT_PASSWORD: password?
   MQTT_TOPIC: str?
+  MQTT_CLIENT_ID: str?
+  MQTT_ALLOW_DOTS_IN_TOPIC: str?
   SAIC_USER: str
   SAIC_PASSWORD: password
   SAIC_REST_URI: str?
@@ -67,6 +76,8 @@ schema:
   LOG_LEVEL: str?
   MQTT_LOG_LEVEL: str?
   SAIC_RELOGIN_DELAY: str?
+  SAIC_READ_TIMEOUT: str?
+  ACCOUNT_REFRESH_INTERVAL: str?
   HA_DISCOVERY_ENABLED: str?
   HA_DISCOVERY_PREFIX: str?
   HA_SHOW_UNAVAILABLE: str?
@@ -74,6 +85,7 @@ schema:
   MESSAGES_REQUEST_INTERVAL: str?
   OSMAND_SERVER_URI: str?
   OSMAND_DEVICE_ID: str?
+  OSMAND_USE_KNOTS: str?
   PUBLISH_RAW_OSMAND_DATA_ENABLED: str?
 
 init: false
