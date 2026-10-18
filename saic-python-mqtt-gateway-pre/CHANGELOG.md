@@ -1,6 +1,6 @@
 # SAIC MQTT Gateway (Python)
 
-## 0.13.0 (rc3)
+## 0.13.0 (rc5)
 
 ### Added
 
@@ -34,6 +34,10 @@
 * Upgrade development dependencies (ruff 0.17, mypy 2.4), bump the GitHub
   Actions and pre-commit hooks, and add Dependabot (#480).
 
+* Build the Docker image on the Poetry 2.5.1 base image, build the Arm images
+  on native Arm runners instead of QEMU, and run the tests on Python 3.15 as a
+  non-blocking check (#495, #496).
+
 ### Fixed
 
 * Exit immediately on permanent MQTT connection failures (bad credentials,
@@ -65,6 +69,28 @@
 * Log SAIC API timeouts and "try again later" replies as a short warning
   without a traceback, and log failed commands on transient API errors at
   ERROR level (#473, #474).
+
+* Fix the scheduled charging job failing with `no running event loop` since
+  the aiomqtt migration, which meant the gateway never switched to `force`
+  refresh at the scheduled charging start time (#484, #485).
+
+* Exit when the MQTT connection task ends, so Docker or Kubernetes can restart
+  the gateway instead of it running without MQTT. Running with MQTT disabled
+  is not affected (#491).
+
+* Do not hang at startup when the MQTT connection task crashes before the first
+  connection (#489), and log such crashes instead of leaving them unreported
+  (#488, #490).
+
+* Keep references to the tasks that publish to MQTT, so they cannot be
+  garbage collected before they finish, and report a clear error when
+  publishing from outside the event loop (#487, #488).
+
+* Wait up to 2 s for pending MQTT publishes on shutdown, including when the
+  shutdown happens during startup, instead of dropping them (#492).
+
+* Prefer the `RELEASE_VERSION` set at build time over the package metadata for
+  the reported gateway version (#493).
 
 * Install only the main dependency group in the Docker image (#469).
 
