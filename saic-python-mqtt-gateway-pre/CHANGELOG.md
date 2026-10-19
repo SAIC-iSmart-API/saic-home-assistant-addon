@@ -1,6 +1,6 @@
 # SAIC MQTT Gateway (Python)
 
-## 0.13.0 (rc5)
+## 0.13.0
 
 ### Added
 
