@@ -1,6 +1,6 @@
 # SAIC MQTT Gateway (Python)
 
-## 0.14.0 (rc2)
+## 0.14.0 (rc3)
 
 ### Added
 
@@ -43,6 +43,14 @@
 * Update certifi, coverage, ruff and tzlocal (#507).
 
 * Update the development dependencies (#514).
+
+### Fixed
+
+* Stop polling at the charging interval when the charge data stops arriving.
+  If the vehicle status answers but the charge management call fails for three
+  polls in a row, the gateway now assumes charging has ended. Before, it kept
+  the last charging interval and woke the car all day, draining the 12V battery
+  (#510).
 
 ## 0.13.0
 
