@@ -8,7 +8,7 @@ image: "saicismartapi/saic-python-mqtt-gateway"
 url: "https://github.com/SAIC-iSmart-API/saic-home-assistant-addon"
 slug: "saic_python_mqtt_gateway-pre"
 stage: "experimental"
-version: "0.13.0"
+version: "0.14.0-rc2"
 legacy: true
 map: 
   - config:rw
@@ -23,6 +23,8 @@ options:
   MQTT_ALLOW_DOTS_IN_TOPIC: "True"
   SAIC_USER: null
   SAIC_PASSWORD: null
+  SAIC_PRESET: "mg_eu"
+  SAIC_DEVICE_APP_ID: ""
   SAIC_REST_URI: "https://gateway-mg-eu.soimt.com/api.app/v1/"
   SAIC_REGION: "eu"
   SAIC_TENANT_ID: "459771"
@@ -45,6 +47,7 @@ options:
   HA_SHOW_UNAVAILABLE: "True"
   CHARGE_MIN_PERCENTAGE: "1.0"
   MESSAGES_REQUEST_INTERVAL: "60"
+  CACHED_STATUS_INTERVAL: "0"
   OSMAND_SERVER_URI: ""
   OSMAND_DEVICE_ID: ""
   OSMAND_USE_KNOTS: "True"
@@ -61,6 +64,8 @@ schema:
   MQTT_ALLOW_DOTS_IN_TOPIC: str?
   SAIC_USER: str
   SAIC_PASSWORD: password
+  SAIC_PRESET: list(mg_eu|mg_au|mg_tr|maxus_eu)?
+  SAIC_DEVICE_APP_ID: str?
   SAIC_REST_URI: str?
   SAIC_REGION: str?
   SAIC_TENANT_ID: str?
@@ -83,6 +88,7 @@ schema:
   HA_SHOW_UNAVAILABLE: str?
   CHARGE_MIN_PERCENTAGE: str
   MESSAGES_REQUEST_INTERVAL: str?
+  CACHED_STATUS_INTERVAL: str?
   OSMAND_SERVER_URI: str?
   OSMAND_DEVICE_ID: str?
   OSMAND_USE_KNOTS: str?
