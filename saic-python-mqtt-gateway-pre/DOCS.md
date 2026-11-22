@@ -24,7 +24,7 @@ do when you run the service from a docker container).
 | -u or --saic-user           | SAIC_USER                    | SAIC user name - **required**                                                                                                                                                       |
 | -p or --saic-password       | SAIC_PASSWORD                | SAIC password - **required**                                                                                                                                                        |
 | --saic-phone-country-code   | SAIC_PHONE_COUNTRY_CODE      | Phone country code, used if the username is not an email address                                                                                                                    |
-| --saic-preset | SAIC_PRESET | Preset for the SAIC API: mg_eu (default), mg_au, mg_tr or maxus_eu. Sets the URI, region, tenant ID and app ID. The REST URI, region and tenant ID options below override the preset, so clear them when you select another preset (for example maxus_eu). |
+| --saic-preset | SAIC_PRESET | Preset for the SAIC API: mg_eu (default), mg_au, mg_tr, mg_br or maxus_eu. Sets the URI, region, tenant ID and app ID. The REST URI, region and tenant ID options below override the preset, so clear them when you select another preset (for example maxus_eu). |
 | --saic-device-app-id | SAIC_DEVICE_APP_ID | SAIC app ID sent as the deviceId suffix at login. The default comes from the preset. |
 | --saic-rest-uri             | SAIC_REST_URI                | SAIC API URI. Default is the European Production endpoint: https://gateway-mg-eu.soimt.com/api.app/v1/                                                                              |
 | --saic-region               | SAIC_REGION                  | SAIC API region. Default is eu.                                                                                                                                                     |
@@ -46,6 +46,7 @@ The following are the known available endpoints:
 |---------------------------------------------|-------------|--------------------------------------------------------------------------------------------------------------------------------------|
 | https://gateway-mg-au.soimt.com/api.app/v1/ | au          | This endpoint is not used by the iSmart app for Australia and New Zealand but has been tested and proven to work in these countries. |
 | https://gateway-mg-eu.soimt.com/api.app/v1/ | eu          |                                                                                                                                      |
+| https://gateway-mg-br.soimt.com/api.app/v1/ | br          | Used by the "MG i-SMART LATAM" app (Brazil). Use SAIC_PRESET=mg_br.                                                 |
 
 ### MQTT Broker
 
